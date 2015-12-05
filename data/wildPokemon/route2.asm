@@ -11,7 +11,7 @@ Route2Mons:
 		db 6,NIDORAN_M
 		db 6,NIDORAN_F
 		db 7,PIDGEY
-		db 7,PIDGEY
+		db 5,SPEAROW
 	ELSE
 		db 3,RATTATA
 		db 3,PIDGEY
