@@ -863,9 +863,6 @@ FaintEnemyPokemon: ; 0x3c567
 	coord hl, 0, 0
 	lb bc, 4, 11
 	call ClearScreenArea
-	ld a, [wIsInBattle]
-	dec a
-	jr z, .wild_win
 	xor a
 	ld [wFrequencyModifier], a
 	ld [wTempoModifier], a
@@ -877,13 +874,6 @@ FaintEnemyPokemon: ; 0x3c567
 	jr z, .sfxwait
 	ld a, SFX_FAINT_THUD
 	call PlaySound
-	call WaitForSoundToFinish
-	jr .sfxplayed
-.wild_win
-	call EndLowHealthAlarm
-	ld a, MUSIC_DEFEATED_WILD_MON
-	call PlayBattleVictoryMusic
-.sfxplayed
 	ld hl, wBattleMonHP
 	ld a, [hli]
 	or [hl]
@@ -901,6 +891,14 @@ FaintEnemyPokemon: ; 0x3c567
 	call PrintText
 	call PrintEmptyString
 	call SaveScreenTilesToBuffer1
+	ld a, [wIsInBattle]
+	dec a
+	jr nz, .trainer
+	call WaitForSoundToFinish
+	call EndLowHealthAlarm
+	ld a, MUSIC_DEFEATED_WILD_MON
+	call PlayBattleVictoryMusic
+.trainer
 	xor a
 	ld [wBattleResult], a
 	ld b, EXP__ALL
@@ -4694,7 +4692,6 @@ CriticalHitTest: ; 3e023 (f:6023)
 	call GetMonHeader
 	ld a, [wMonHBaseSpeed]
 	ld b, a
-	srl b                        ; (effective (base speed/2))
 	ld a, [H_WHOSETURN]
 	and a
 	ld hl, wPlayerMovePower
@@ -4710,14 +4707,12 @@ CriticalHitTest: ; 3e023 (f:6023)
 	ld c, [hl]                   ; read move id
 	ld a, [de]
 	bit GettingPumped, a         ; test for focus energy
-	jr nz, .focusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left,
+	jr z, .noFocusEnergyUsed     
 	                             ; resulting in 1/4 the usual crit chance
-	sla b                        ; (effective (base speed/2)*2)
-	jr nc, .noFocusEnergyUsed
-	ld b, $ff                    ; cap at 255/256
-	jr .noFocusEnergyUsed
-.focusEnergyUsed
-	srl b
+	sla b
+	jr c, .guaranteedCritical
+	sla b
+	jr c, .guaranteedCritical
 .noFocusEnergyUsed
 	ld hl, HighCriticalMoves     ; table of high critical hit moves
 .Loop
@@ -4743,6 +4738,7 @@ CriticalHitTest: ; 3e023 (f:6023)
 	rlc a
 	cp b                         ; check a against calculated crit rate
 	ret nc                       ; no critical hit if no borrow
+.guaranteedCritical
 	ld a, $1
 	ld [wCriticalHitOrOHKO], a   ; set critical hit flag
 	ret
@@ -6412,9 +6408,15 @@ SwapPlayerAndEnemyLevels: ; 3ec81 (f:6c81)
 LoadPlayerBackPic: ; 3ec92 (f:6c92)
 	ld a, [wBattleType]
 	dec a ; is it the old man tutorial?
-	ld de, RedPicBack
-	jr nz, .next
 	ld de, OldManPic
+	jr z, .next
+    ld a, [wPlayerGender]
+    bit 2, a
+    jr z, .RedBack
+    ld de, LeafPicBack
+	jr .next
+.RedBack
+	ld de, RedPicBack
 .next
 	ld a, BANK(RedPicBack)
 	call UncompressSpriteFromDE
@@ -7454,6 +7456,10 @@ FreezeBurnParalyzeEffect: ; 3f30c (f:730c)
 	call ClearHyperBeam ; resets hyper beam (recharge) condition from target
 	ld a, 1 << FRZ
 	ld [wEnemyMonStatus], a
+.setFreezeCounter
+	call BattleRandom
+	and $7
+	jr z, .setFreezeCounter
 	ld a, ANIM_A9
 	call PlayBattleAnimation
 	ld hl, FrozenText
@@ -8717,3 +8723,9 @@ PlayBattleAnimationGotID: ; 3fbbc (f:7bbc)
 	pop de
 	pop hl
 	ret
+
+PlayDefeatedWildMonMusic:
+  call WaitForSoundToFinish
+  call EndLowHealthAlarm
+  ld a, MUSIC_DEFEATED_WILD_MON
+  jp PlayBattleVictoryMusic

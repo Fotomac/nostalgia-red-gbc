@@ -10,10 +10,10 @@ IslandMonsB2:
 		db 30,HORSEA
 		db 28,SHELLDER
 		db 30,GOLBAT
-		db 37,SLOWBRO
+		db 37,JYNX
 	ENDC
 
-	IF DEF(_GREEN) || !DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_GREEN)
 		db 30,SEEL
 		db 30,PSYDUCK
 		db 32,SEEL
@@ -23,10 +23,10 @@ IslandMonsB2:
 		db 30,KRABBY
 		db 28,STARYU
 		db 30,GOLBAT
-		db 37,GOLDUCK
+		db 37,JYNX
 	ENDC
 
-	IF DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_BLUE)
 		db 30,SEEL
 		db 30,HORSEA
 		db 32,SEEL

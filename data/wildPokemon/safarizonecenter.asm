@@ -13,7 +13,7 @@ ZoneMonsCenter:
 		db 23,CHANSEY
 	ENDC
 
-	IF DEF(_GREEN) || (!DEF(_JAPAN) && DEF(_BLUE))
+	IF DEF(_GREEN)
 		db 22,NIDORAN_F
 		db 25,RHYHORN
 		db 22,VENONAT
@@ -26,7 +26,7 @@ ZoneMonsCenter:
 		db 23,CHANSEY
 	ENDC
 
-	IF DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_BLUE)
 		db 22,NIDORAN_M
 		db 25,RHYHORN
 		db 22,VENONAT

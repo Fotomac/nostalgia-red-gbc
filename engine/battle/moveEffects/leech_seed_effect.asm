@@ -14,11 +14,11 @@ LeechSeedEffect_: ; 2bea9 (a:7ea9)
 ; miss if the target is grass-type or already seeded
 	ld a, [de]
 	cp GRASS
-	jr z, .moveMissed
+	jr z, .doesntAffect
 	inc de
 	ld a, [de]
 	cp GRASS
-	jr z, .moveMissed
+	jr z, .doesntAffect
 	bit Seeded, [hl]
 	jr nz, .moveMissed
 	set Seeded, [hl]
@@ -29,6 +29,11 @@ LeechSeedEffect_: ; 2bea9 (a:7ea9)
 	ld c, 50
 	call DelayFrames
 	ld hl, EvadedAttackText
+	jp PrintText
+.doesntAffect
+	ld c, 50
+	call DelayFrames
+	ld hl, DoesntAffectMonText
 	jp PrintText
 
 WasSeededText: ; 2bef2 (a:7ef2)

@@ -1,6 +1,6 @@
 ZoneMons1:
 	db $1E
-	IF DEF(_RED) || (DEF(_JAPAN) && DEF(_BLUE))
+	IF DEF(_RED) || DEF(_BLUE)
 		db 24,NIDORAN_M
 		db 26,DODUO
 		db 22,PARAS
@@ -9,16 +9,11 @@ ZoneMons1:
 		db 23,EXEGGCUTE
 		db 24,NIDORAN_F
 		db 25,PARASECT
-		IF DEF(_RED)
-			db 25,KANGASKHAN
-		ENDC
-		IF DEF(_JAPAN) && DEF(_BLUE)
-			db 25,LICKITUNG
-		ENDC
+		db 25,LICKITUNG
 		db 28,SCYTHER
 	ENDC
 
-	IF DEF(_GREEN) || (!DEF(_JAPAN) && DEF(_BLUE))
+	IF DEF(_GREEN)
 		db 24,NIDORAN_F
 		db 26,DODUO
 		db 22,PARAS
@@ -27,7 +22,7 @@ ZoneMons1:
 		db 23,EXEGGCUTE
 		db 24,NIDORAN_M
 		db 25,PARASECT
-		db 25,KANGASKHAN
+		db 25,LICKITUNG
 		db 28,PINSIR
 	ENDC
 

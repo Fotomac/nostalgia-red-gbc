@@ -116,3 +116,127 @@ _PewterCityText12:: ; a4d0c (29:4d0c)
 	cont "City"
 	done
 
+_PewterPhoneCallTextBulbasaur::
+	text "Oh!"
+	line "I've got a call!"
+
+	para "OAK: ", $52, "!"
+	line "How's it going?"
+	cont "Huh? You got the"
+	cont "BOULDERBADGE?"
+	cont "Wonderful!"
+
+	para "It must've been"
+	line "pretty easy with"
+	cont "my old #MON."
+
+	para "Oh! Meet my"
+	line "assistant just"
+	cont "outside of"
+	cont "CERULEAN CITY."
+
+	para "There's been an"
+	line "attack there,"
+	cont "and a #MON"
+	cont "was stolen from"
+	cont "a nearby breeding"
+	cont "center."
+
+	para "Thankfully, my"
+	line "assistant was"
+	cont "able to rescue"
+	cont "it, and he's now"
+	cont "looking for a"
+	cont "home for it."
+
+	para "I'm hoping you"
+	line "would be"
+	cont "interested."
+
+	para "Good luck!"
+	done
+
+_PewterPhoneCallTextCharmander::
+	text "Oh!"
+	line "I've got a call!"
+
+	para "OAK: ", $52, "!"
+	line "How's it going?"
+	cont "Huh? You got the"
+	cont "BOULDERBADGE?"
+	cont "Amazing! I don't"
+	cont "know how you"
+	cont "managed it!"
+
+	para "That one must've"
+	line "been a rocky"
+	cont "start, but hang"
+	cont "in there!"
+
+	para "Oh! Meet my"
+	line "assistant just"
+	cont "outside of"
+	cont "CERULEAN CITY."
+
+	para "There's been an"
+	line "attack there,"
+	cont "and a #MON"
+	cont "was stolen from"
+	cont "a nearby breeding"
+	cont "center."
+
+	para "Thankfully, my"
+	line "assistant was"
+	cont "able to rescue"
+	cont "it, and he's now"
+	cont "looking for a"
+	cont "home for it."
+
+	para "I'm hoping you"
+	line "would be"
+	cont "interested."
+
+	para "Good luck!"
+	done
+
+_PewterPhoneCallTextSquirtle::
+	text "Oh!"
+	line "I've got a call!"
+
+	para "OAK: ", $52, "!"
+	line "How's it going?"
+	cont "Huh? You got the"
+	cont "BOULDERBADGE?"
+	cont "Great job!"
+
+	para "My old #MON"
+	line "must've done the"
+	cont "trick without"
+	cont "much trouble!"
+
+	para "Oh! Meet my"
+	line "assistant just"
+	cont "outside of"
+	cont "CERULEAN CITY."
+
+	para "There's been an"
+	line "attack there,"
+	cont "and a #MON"
+	cont "was stolen from"
+	cont "a nearby breeding"
+	cont "center."
+
+	para "Thankfully, my"
+	line "assistant was"
+	cont "able to rescue"
+	cont "it, and he's now"
+	cont "looking for a"
+	cont "home for it."
+
+	para "I'm hoping you"
+	line "would be"
+	cont "interested."
+
+	para "Good luck!"
+	done
+

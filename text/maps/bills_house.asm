@@ -44,6 +44,16 @@ _BillsHouseText_1e86f:: ; 8d391 (23:5391)
 	cont "OK? All right!"
 	prompt
 
+_BillsHouseText_1e86f_2::
+	text "No!? Come on, you"
+	line "gotta help a guy"
+	cont "in deep trouble!"
+
+	para "What do you say,"
+	line "milady? Please?"
+	cont "OK? All right!"
+	prompt
+
 _BillThankYouText:: ; 8d3f5 (23:53f5)
 	text "BILL: Yeehah!"
 	line "Thanks, bud! I"

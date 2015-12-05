@@ -14,7 +14,7 @@ Route5Mons:
 		db 16,MANKEY
 	ENDC
 
-	IF DEF(_GREEN) || !DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_GREEN)
 		db 13,BELLSPROUT
 		db 13,PIDGEY
 		db 15,PIDGEY
@@ -27,7 +27,7 @@ Route5Mons:
 		db 16,MEOWTH
 	ENDC
 
-	IF DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_BLUE)
 		db 13,ODDISH
 		db 13,PIDGEY
 		db 15,PIDGEY

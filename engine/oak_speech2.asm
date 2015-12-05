@@ -1,5 +1,8 @@
 ChoosePlayerName: ; 695d (1:695d)
 	call OakSpeechSlidePicRight
+    ld a, [wPlayerGender] ; Added gender check
+    bit 2, a              ; Added gender check
+    jr nz, .AreGirl       ; Skip to girl names if you are a girl instead
 	ld de, DefaultNamesPlayer
 	call DisplayIntroNameTextBox
 	ld a, [wCurrentMenuItem]
@@ -10,6 +13,17 @@ ChoosePlayerName: ; 695d (1:695d)
 	ld de, wPlayerName
 	call OakSpeechSlidePicLeft
 	jr .done
+.AreGirl
+    ld de, DefaultNamesGirl
+    call DisplayIntroNameTextBox
+    ld a, [wCurrentMenuItem]
+    and a
+    jr z, .customName
+    ld hl, DefaultNamesGirlList
+    call GetDefaultName
+    ld de, wPlayerName
+    call OakSpeechSlidePicLeft
+    jr .done
 .customName
 	ld hl, wPlayerName
 	xor a ; NAME_PLAYER_SCREEN
@@ -22,6 +36,12 @@ ChoosePlayerName: ; 695d (1:695d)
 	call Delay3
 	ld de, RedPicFront
 	ld b, BANK(RedPicFront)
+    ld a, [wPlayerGender] ; Added gender check
+    bit 2, a              ; Added gender check
+    jr z, .AreBoy3
+    ld de, LeafPicFront
+    ld b, BANK(LeafPicFront)
+.AreBoy3
 	call IntroDisplayPicCenteredOrUpperRight
 .done
 	ld hl, YourNameIsText
@@ -194,12 +214,42 @@ DefaultNamesPlayer: ; 6aa8 (1:6aa8)
 	next "ASH"
 	next "JACK"
 	db   "@"
+	
+DefaultNamesGirl:
+	db   "NEW NAME"
+	next "LEAF"
+	next "AMANDA"
+	next "JUNE"
+	db   "@"
 
 DefaultNamesRival: ; 6abe (1:6abe)
 	db   "NEW NAME"
-	next "BLUE"
+	next "GREEN"
 	next "GARY"
 	next "JOHN"
+	db   "@"
+ENDC
+
+IF DEF(_GREEN)
+DefaultNamesPlayer: ; 6aa8 (1:6aa8)
+	db   "NEW NAME"
+	next "GREEN"
+	next "GARY"
+	next "JOHN"
+	db   "@"
+
+DefaultNamesGirl:
+	db   "NEW NAME"
+	next "SCARLET"
+	next "CASSIE"
+	next "JANE"
+	db   "@"
+	
+DefaultNamesRival: ; 6abe (1:6abe)
+	db   "NEW NAME"
+	next "RED"
+	next "ASH"
+	next "JACK"
 	db   "@"
 ENDC
 
@@ -207,15 +257,22 @@ IF DEF(_BLUE)
 DefaultNamesPlayer: ; 6aa8 (1:6aa8)
 	db   "NEW NAME"
 	next "BLUE"
-	next "GARY"
-	next "JOHN"
+	next "KAZ"
+	next "JEAN"
 	db   "@"
 
+DefaultNamesGirl:
+	db   "NEW NAME"
+	next "SCARLET"
+	next "LEAF"
+	next "NICOLE"
+	db   "@"
+	
 DefaultNamesRival: ; 6abe (1:6abe)
 	db   "NEW NAME"
 	next "RED"
-	next "ASH"
-	next "JACK"
+	next "GREEN"
+	next "RITCHIE"
 	db   "@"
 ENDC
 
@@ -225,6 +282,13 @@ DefaultNamesPlayer:
 	next "YELLOW"
 	next "ASH"
 	next "JACK"
+	db   "@"
+
+DefaultNamesGirl:
+	db   "NEW NAME"
+	next "LEAF"
+	next "AMANDA"
+	next "JUNE"
 	db   "@"
 
 DefaultNamesRival:
@@ -262,18 +326,32 @@ GetDefaultName: ; 6ad6 (1:6ad6)
 IF DEF(_RED)
 DefaultNamesPlayerList: ; 6af2 (1:6af2)
 	db "NEW NAME@RED@ASH@JACK@"
+DefaultNamesGirlList:
+	db "NEW NAME@LEAF@AMANDA@JUNE@"
 DefaultNamesRivalList: ; 6b08 (1:6b08)
-	db "NEW NAME@BLUE@GARY@JOHN@"
+	db "NEW NAME@GREEN@GARY@JOHN@"
+ENDC
+IF DEF(_GREEN)
+DefaultNamesPlayerList: ; 6af2 (1:6af2)
+	db "NEW NAME@GREEN@GARY@JOHN@"
+DefaultNamesGirlList:
+	db "NEW NAME@SCARLET@CASSIE@JANE@"
+DefaultNamesRivalList: ; 6b08 (1:6b08)
+	db "NEW NAME@RED@ASH@JACK@"
 ENDC
 IF DEF(_BLUE)
 DefaultNamesPlayerList: ; 6af2 (1:6af2)
-	db "NEW NAME@BLUE@GARY@JOHN@"
+	db "NEW NAME@BLUE@KAZ@JEAN@"
+DefaultNamesGirlList:
+	db "NEW NAME@SCARLET@LEAF@NICOLE@"
 DefaultNamesRivalList: ; 6b08 (1:6b08)
-	db "NEW NAME@RED@ASH@JACK@"
+	db "NEW NAME@RED@GREEN@RITCHIE@"
 ENDC
 IF DEF(_YELLOW)
 DefaultNamesPlayerList:
 	db "NEW NAME@YELLOW@ASH@JACK@"
+DefaultNamesGirlList:
+	db "NEW NAME@LEAF@AMANDA@JUNE@"
 DefaultNamesRivalList:
 	db "NEW NAME@BLUE@GARY@JOHN@"
 ENDC

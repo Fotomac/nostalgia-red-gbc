@@ -3,13 +3,15 @@ INCLUDE "constants.asm"
 NPC_SPRITES_1 EQU $4
 NPC_SPRITES_2 EQU $5
 
-GFX EQU $4
+GFX_1 EQU $4
+GFX_2 EQU $6
 
 PICS_1 EQU $9
 PICS_2 EQU $A
 PICS_3 EQU $B
 PICS_4 EQU $C
 PICS_5 EQU $D
+PICS_6 EQU $E
 
 
 INCLUDE "home.asm"
@@ -1686,8 +1688,8 @@ TwoOptionMenu_RestoreScreenTiles: ; 7656 (1:7656)
 TwoOptionMenuStrings: ; 7671 (1:7671)
 	db 4,3,0
 	dw .YesNoMenu
-	db 6,3,0
-	dw .NorthWestMenu
+	db 5,3,0
+	dw .BoyGirlMenu
 	db 6,3,0
 	dw .SouthEastMenu
 	db 6,3,0
@@ -1705,8 +1707,8 @@ TwoOptionMenuStrings: ; 7671 (1:7671)
 	db "NO",$4E,"YES@"
 .YesNoMenu ; 76a0 (1:36a0)
 	db "YES",$4E,"NO@"
-.NorthWestMenu ; 76a7 (1:36a7)
-	db "NORTH",$4E,"WEST@"
+.BoyGirlMenu ; 76a7 (1:36a7)
+	db "BOY",$4E,"GIRL@"
 .SouthEastMenu ; 76b2 (1:36b2)
 	db "SOUTH",$4E,"EAST@"
 .NorthEastMenu ; 76bd (1:36bd)
@@ -4739,6 +4741,8 @@ INCLUDE "engine/hidden_object_functions3.asm"
 
 SECTION "NPC Sprites 1", ROMX, BANK[NPC_SPRITES_1]
 
+GiovanniSprite:       INCBIN "gfx/sprites/giovanni.2bpp"
+RocketSprite:         INCBIN "gfx/sprites/rocket.2bpp"
 OakAideSprite:         INCBIN "gfx/sprites/oak_aide.2bpp"
 RockerSprite:          INCBIN "gfx/sprites/rocker.2bpp"
 SwimmerSprite:         INCBIN "gfx/sprites/swimmer.2bpp"
@@ -4768,7 +4772,7 @@ OldAmberSprite:        INCBIN "gfx/sprites/old_amber.2bpp"
 LyingOldManSprite:     INCBIN "gfx/sprites/lying_old_man.2bpp"
 
 
-SECTION "Graphics", ROMX, BANK[GFX]
+SECTION "Graphics", ROMX, BANK[GFX_1]
 
 PokemonLogoGraphics:            INCBIN "gfx/pokemon_logo.2bpp"
 FontGraphics:                   INCBIN "gfx/font.1bpp"
@@ -4794,15 +4798,17 @@ PlayerCharacterTitleGraphics:   INCBIN "gfx/player_title.2bpp"
 PlayerCharacterTitleGraphicsEnd:
 
 
+
 SECTION "Battle (bank 4)", ROMX, BANK[$4]
 
 INCLUDE "engine/overworld/is_player_just_outside_map.asm"
 INCLUDE "engine/menu/status_screen.asm"
 INCLUDE "engine/menu/party_menu.asm"
 
-RedPicFront:: INCBIN "pic/trainer/red.pic"
-ShrinkPic1::  INCBIN "pic/trainer/shrink1.pic"
-ShrinkPic2::  INCBIN "pic/trainer/shrink2.pic"
+RedPicFront::  INCBIN "pic/trainer/red.pic"
+LeafPicFront:: INCBIN "pic/trainer/leaf.pic"
+ShrinkPic1::   INCBIN "pic/trainer/shrink1.pic"
+ShrinkPic2::   INCBIN "pic/trainer/shrink2.pic"
 
 INCLUDE "engine/turn_sprite.asm"
 INCLUDE "engine/menu/start_sub_menus.asm"
@@ -4820,6 +4826,8 @@ SECTION "NPC Sprites 2", ROMX, BANK[NPC_SPRITES_2]
 
 RedCyclingSprite:     INCBIN "gfx/sprites/cycling.2bpp"
 RedSprite:            INCBIN "gfx/sprites/red.2bpp"
+LeafSprite:           INCBIN "gfx/sprites/leaf.2bpp"
+LeafCyclingSprite:    INCBIN "gfx/sprites/leafcycling.2bpp"
 BlueSprite:           INCBIN "gfx/sprites/blue.2bpp"
 OakSprite:            INCBIN "gfx/sprites/oak.2bpp"
 BugCatcherSprite:     INCBIN "gfx/sprites/bug_catcher.2bpp"
@@ -4841,8 +4849,6 @@ SailorSprite:         INCBIN "gfx/sprites/sailor.2bpp"
 CookSprite:           INCBIN "gfx/sprites/cook.2bpp"
 BikeShopGuySprite:    INCBIN "gfx/sprites/bike_shop_guy.2bpp"
 MrFujiSprite:         INCBIN "gfx/sprites/mr_fuji.2bpp"
-GiovanniSprite:       INCBIN "gfx/sprites/giovanni.2bpp"
-RocketSprite:         INCBIN "gfx/sprites/rocket.2bpp"
 MediumSprite:         INCBIN "gfx/sprites/medium.2bpp"
 WaiterSprite:         INCBIN "gfx/sprites/waiter.2bpp"
 ErikaSprite:          INCBIN "gfx/sprites/erika.2bpp"
@@ -4868,6 +4874,12 @@ INCLUDE "engine/overworld/emotion_bubbles.asm"
 INCLUDE "engine/evolve_trade.asm"
 INCLUDE "engine/battle/moveEffects/substitute_effect.asm"
 INCLUDE "engine/menu/pc.asm"
+
+
+SECTION "Graphics (bank 6)", ROMX, BANK[GFX_2]
+
+FemaleTitleGraphics:            INCBIN "gfx/player_title_2.2bpp"
+FemaleTitleGraphicsEnd:
 
 
 SECTION "bank6",ROMX,BANK[$6]
@@ -5423,9 +5435,6 @@ PidgeotPicBack::       INCBIN "pic/monback/pidgeotb.pic"
 StarmiePicFront::      INCBIN "pic/bmon/starmie.pic"
 StarmiePicBack::       INCBIN "pic/monback/starmieb.pic"
 
-RedPicBack::           INCBIN "pic/trainer/redb.pic"
-OldManPic::            INCBIN "pic/trainer/oldman.pic"
-
 
 SECTION "Battle (bank C)", ROMX, BANK[$C]
 INCLUDE "engine/battle/moveEffects/mist_effect.asm"
@@ -5498,6 +5507,16 @@ INCLUDE "engine/slot_machine.asm"
 INCLUDE "engine/overworld/pewter_guys.asm"
 INCLUDE "engine/multiply_divide.asm"
 INCLUDE "engine/game_corner_slots.asm"
+
+
+SECTION "Pics 6", ROMX, BANK[PICS_6]
+
+RedPicBack::           INCBIN "pic/trainer/redb.pic"
+LeafPicBack::          INCBIN "pic/trainer/leafb.pic"
+OldManPic::            INCBIN "pic/trainer/oldman.pic"
+LeafFishingTilesFront: INCBIN "gfx/leaf_fishing_tile_front.2bpp"
+LeafFishingTilesBack:  INCBIN "gfx/leaf_fishing_tile_back.2bpp"
+LeafFishingTilesSide:  INCBIN "gfx/leaf_fishing_tile_side.2bpp"
 
 
 SECTION "bankE",ROMX,BANK[$E]
@@ -6499,6 +6518,9 @@ INCLUDE "engine/battle/decrement_pp.asm"
 
 Version_GFX:
 IF DEF(_RED)
+	INCBIN "gfx/red/redgreenversion.1bpp" ; 10 tiles
+ENDC
+IF DEF(_GREEN)
 	INCBIN "gfx/red/redgreenversion.1bpp" ; 10 tiles
 ENDC
 IF DEF(_BLUE)

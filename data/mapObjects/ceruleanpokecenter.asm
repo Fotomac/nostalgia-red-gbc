@@ -12,6 +12,7 @@ CeruleanPokecenterObject: ; 0x5c65f (size=44)
 	object SPRITE_BLACK_HAIR_BOY_2, $a, $5, WALK, $0, $2 ; person
 	object SPRITE_GENTLEMAN, $4, $3, STAY, DOWN, $3 ; person
 	object SPRITE_CABLE_CLUB_WOMAN, $b, $2, STAY, DOWN, $4 ; person
+	object SPRITE_OAK_AIDE, $5, $5, STAY, LEFT, $5 ; person
 
 	; warp-to
 	EVENT_DISP CERULEAN_POKECENTER_WIDTH, $7, $3

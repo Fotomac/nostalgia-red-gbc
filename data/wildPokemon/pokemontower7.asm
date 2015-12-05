@@ -11,7 +11,7 @@ TowerMons7:
 		db 24,CUBONE
 		db 29,GASTLY
 		db 24,HAUNTER
-		db 29,HAUNTER
+		db 29,GENGAR
 	ELSE
 		db 21,GASTLY
 		db 22,GASTLY

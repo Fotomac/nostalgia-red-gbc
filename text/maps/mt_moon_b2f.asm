@@ -97,6 +97,10 @@ _MtMoon3BattleText3:: ; 80b3b (20:4b3b)
 	text "We, TEAM ROCKET,"
 	line "are #MON"
 	cont "gangsters!"
+
+	para "We strike fear"
+	line "with our"
+	cont "strength!"
 	done
 
 _MtMoon3EndBattleText3:: ; 80b61 (20:4b61)

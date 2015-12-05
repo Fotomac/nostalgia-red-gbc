@@ -11,7 +11,7 @@ TowerMons5:
 		db 20,CUBONE
 		db 27,GASTLY
 		db 22,HAUNTER
-		db 27,HAUNTER
+		db 27,GENGAR
 	ELSE
 		db 20,GASTLY
 		db 21,GASTLY

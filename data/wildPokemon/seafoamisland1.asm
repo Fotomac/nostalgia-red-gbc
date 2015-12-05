@@ -13,7 +13,7 @@ IslandMons1:
 		db 38,GOLDUCK
 	ENDC
 
-	IF DEF(_GREEN) || !DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_GREEN)
 		db 30,SEEL
 		db 30,PSYDUCK
 		db 30,STARYU
@@ -26,7 +26,7 @@ IslandMons1:
 		db 38,SLOWBRO
 	ENDC
 
-	IF DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_BLUE)
 		db 30,SEEL
 		db 30,HORSEA
 		db 30,STARYU

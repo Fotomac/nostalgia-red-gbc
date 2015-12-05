@@ -14,7 +14,7 @@ Route25Mons:
 		db 8,CATERPIE
 	ENDC
 
-	IF DEF(_GREEN) || !DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_GREEN)
 		db 8,CATERPIE
 		db 9,METAPOD
 		db 13,PIDGEY
@@ -27,7 +27,7 @@ Route25Mons:
 		db 8,WEEDLE
 	ENDC
 
-	IF DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_BLUE)
 		db 8,CATERPIE
 		db 9,METAPOD
 		db 13,PIDGEY

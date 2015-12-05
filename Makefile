@@ -15,7 +15,7 @@ MD5 := md5sum -c --quiet
 # Suppress annoying intermediate file deletion messages.
 .PRECIOUS: %.2bpp
 
-.PHONY: all clean red blue compare
+.PHONY: all clean red green blue compare
 
 
 poketools := extras/pokemontools
@@ -25,7 +25,7 @@ gfx       := $(PYTHON) $(poketools)/gfx.py
 pic       := $(PYTHON) $(poketools)/pic.py compress
 includes  := $(PYTHON) $(poketools)/scan_includes.py
 
-versions := red blue
+versions := red	green	blue
 
 # Collect file dependencies for objects in red/ and blue/.
 $(foreach ver, $(versions), \
@@ -38,14 +38,15 @@ $(foreach obj, $(all_obj), \
 )
 
 
-roms := pokered.gbc pokeblue.gbc
+roms := pokered.gbc	pokegreen.gbc	pokeblue.gbc
 
 all:    $(roms)
 red:    pokered.gbc
+green:  pokegreen.gbc
 blue:   pokeblue.gbc
 
 # For contributors to make sure a change didn't affect the contents of the rom.
-compare: red blue
+compare: red green blue
 	@$(MD5) roms.md5
 
 clean:
@@ -60,9 +61,10 @@ asm_opt = -h
 link_opt = -n poke$*.sym
 
 # Header options for rgbfix.
-dmg_opt  = -jsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03
-red_opt  = $(dmg_opt) -t "POKEMON RED"
-blue_opt = $(dmg_opt) -t "POKEMON BLUE"
+dmg_opt   = -jsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03
+red_opt   = $(dmg_opt) -t "POKEMON RED"
+green_opt = $(dmg_opt) -t "POKEMON GREEN"
+blue_opt  = $(dmg_opt) -t "POKEMON BLUE"
 
 
 %.png:  ;

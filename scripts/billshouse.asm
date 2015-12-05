@@ -139,7 +139,14 @@ BillsHouseText1: ; 1e83d (7:683d)
 	ld [wBillsHouseCurScript], a
 	jr .asm_1e862
 .asm_1e85a
+    ld a, [wPlayerGender]
+    bit 2, a
+    jr nz, .girl
 	ld hl, BillsHouseText_1e86f
+	call PrintText
+	jr .asm_1e84d
+.girl
+	ld hl, BillsHouseText_1e86f_2
 	call PrintText
 	jr .asm_1e84d
 .asm_1e862
@@ -155,6 +162,10 @@ BillsHouseText_1e86a: ; 1e86a (7:686a)
 
 BillsHouseText_1e86f: ; 1e86f (7:686f)
 	TX_FAR _BillsHouseText_1e86f
+	db "@"
+
+BillsHouseText_1e86f_2: ; 1e86f (7:686f)
+	TX_FAR _BillsHouseText_1e86f_2
 	db "@"
 
 BillsHouseText2: ; 1e874 (7:6874)

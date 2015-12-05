@@ -11,7 +11,7 @@ PlateauMons1:
 		db 43,ONIX
 		db 45,ONIX
 		db 41,GRAVELER
-		db 47,GRAVELER
+		db 47,GOLEM
 	ELSE
 		db 24,MACHOP
 		db 26,GEODUDE

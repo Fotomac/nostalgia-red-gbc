@@ -442,7 +442,7 @@ FightIntroBackMonEnd:
 
 FightIntroFrontMon: ; 42099 (10:6099)
 
-IF DEF(_RED)
+IF DEF(_RED) || DEF(_GREEN)
 	INCBIN "gfx/red/intro_nido_1.6x6.2bpp"
 	INCBIN "gfx/red/intro_nido_2.6x6.2bpp"
 	INCBIN "gfx/red/intro_nido_3.6x6.2bpp"

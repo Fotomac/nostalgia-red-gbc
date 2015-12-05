@@ -13,7 +13,7 @@ MansionMonsB1:
 		db 42,MUK
 	ENDC
 
-	IF DEF(_GREEN) || !DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_GREEN)
 		db 33,GRIMER
 		db 31,GRIMER
 		db 35,VULPIX
@@ -26,7 +26,7 @@ MansionMonsB1:
 		db 42,WEEZING
 	ENDC
 
-	IF DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_BLUE)
 		db 33,GRIMER
 		db 31,GRIMER
 		db 35,GROWLITHE

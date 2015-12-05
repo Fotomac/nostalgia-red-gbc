@@ -26,7 +26,7 @@ DungeonMonsB1:
 		ENDC
 		db 65,DITTO
 		db 63,DITTO
-		db 67,DITTO
+		db 67,ALAKAZAM
 	ENDC
 
 	db $00

@@ -14,7 +14,7 @@ Route24Mons:
 		db 12,ABRA
 	ENDC
 
-	IF DEF(_GREEN) || !DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_GREEN)
 		db 7,CATERPIE
 		db 8,METAPOD
 		db 12,PIDGEY
@@ -27,7 +27,7 @@ Route24Mons:
 		db 12,ABRA
 	ENDC
 
-	IF DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_BLUE)
 		db 7,CATERPIE
 		db 8,METAPOD
 		db 12,PIDGEY

@@ -18,10 +18,10 @@ TunnelMonsB2:
 		db 17,GEODUDE
 		db 15,MACHOP
 		db 16,GEODUDE
-		IF DEF(_RED) || DEF(_GREEN) || (DEF(_BLUE) && !DEF(_JAPAN))
+		IF DEF(_RED) || DEF(_GREEN)
 			db 18,ZUBAT
 		ENDC
-		IF DEF(_BLUE) && DEF(_JAPAN)
+		IF DEF(_BLUE)
 			db 18,DITTO
 		ENDC
 		db 17,MACHOP

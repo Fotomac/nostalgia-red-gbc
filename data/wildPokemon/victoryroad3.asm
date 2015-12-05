@@ -11,7 +11,7 @@ PlateauMons3:
 		db 42,MACHOKE
 		db 45,MACHOKE
 		db 47,GRAVELER
-		db 47,GRAVELER
+		db 47,GOLEM
 	ELSE
 		db 24,MACHOP
 		db 26,GEODUDE
@@ -22,7 +22,7 @@ PlateauMons3:
 		db 43,GRAVELER
 		db 41,GOLBAT
 		db 42,MACHOKE
-		db 45,MACHOKE
+		db 45,MACHAMP
 	ENDC
 
 	db $00

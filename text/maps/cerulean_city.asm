@@ -282,3 +282,94 @@ _CeruleanCityText17:: ; a5445 (29:5445)
 	line "Mermaid!"
 	done
 
+_CeruleanPhoneCallTextBulbasaur::
+	text "Oh!"
+	line "I've got a call!"
+
+	para "OAK: ", $52, "!"
+	line "You made it to"
+	cont "CERULEAN CITY"
+	cont "all right?"
+
+	para "My old #MON"
+	line "should be a"
+	cont "cinch against"
+	cont "MISTY!"
+
+	para "By the way, I"
+	line "want you to"
+	cont "meet my AIDE"
+	cont "in the #MON"
+	cont "CENTER."
+
+	para "He's got a"
+	line "#MON for you."
+	cont "He'll explain"
+	cont "when you arrive."
+
+	para "Good luck!"
+	done
+
+_CeruleanPhoneCallTextCharmander::
+	text "Oh!"
+	line "I've got a call!"
+
+	para "OAK: ", $52, "!"
+	line "You made it to"
+	cont "CERULEAN CITY"
+	cont "all right?"
+
+	para "Don't even think"
+	line "about fighting"
+	cont "MISTY with my"
+	cont "old #MON."
+
+	para "To say nothing"
+	line "about its tail,"
+	cont "she will utterly"
+	cont "thrash you if"
+	cont "you do!"
+
+	para "For a better"
+	line "#MON to use,"
+	cont "meet my AIDE"
+	cont "in the #MON"
+	cont "CENTER. He'll"
+	cont "tell you more"
+	cont "when you arrive."
+
+	para "Good luck!"
+	done
+
+_CeruleanPhoneCallTextSquirtle::
+	text "Oh!"
+	line "I've got a call!"
+
+	para "OAK: ", $52, "!"
+	line "You made it to"
+	cont "CERULEAN CITY"
+	cont "all right?"
+
+	para "I don't know"
+	line "how well you'll"
+	cont "fare against"
+	cont "MISTY with my"
+	cont "old #MON."
+
+	para "I suggest you"
+	line "teach it some"
+	cont "new tricks. Have"
+	cont "you ever given"
+	cont "any thought to"
+	cont "using a TM?"
+
+	para "Anyway..."
+	line "meet my AIDE"
+	cont "in the #MON"
+	cont "CENTER. He's"
+	cont "got something"
+	cont "for you."
+
+	para "Good luck!"
+	done
+

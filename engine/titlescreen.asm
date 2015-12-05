@@ -120,6 +120,9 @@ DisplayTitleScreen: ; 42dd (1:42dd)
 IF DEF(_RED)
 	ld a,CHARMANDER ; which Pokemon to show first on the title screen
 ENDC
+IF DEF(_GREEN)
+	ld a,BULBASAUR ; which Pokemon to show first on the title screen
+ENDC
 IF DEF(_BLUE)
 	ld a,SQUIRTLE ; which Pokemon to show first on the title screen
 ENDC
@@ -308,10 +311,19 @@ ScrollTitleScreenGameVersion: ; 44cf (1:44cf)
 	ret
 
 DrawPlayerCharacter: ; 44dd (1:44dd)
+IF DEF(_GREEN)
+	ld hl, FemaleTitleGraphics
+ELSE
 	ld hl, PlayerCharacterTitleGraphics
+ENDC
 	ld de, vSprites
+IF DEF(_GREEN)
+	ld bc, FemaleTitleGraphicsEnd - FemaleTitleGraphics
+	ld a, BANK(FemaleTitleGraphics)
+ELSE
 	ld bc, PlayerCharacterTitleGraphicsEnd - PlayerCharacterTitleGraphics
 	ld a, BANK(PlayerCharacterTitleGraphics)
+ENDC
 	call FarCopyData2
 	call ClearSprites
 	xor a
@@ -384,9 +396,13 @@ CopyrightTextString: ; 4556 (1:4556)
 
 INCLUDE "data/title_mons.asm"
 
-; prints version text (red, blue)
+; prints version text (red, green, blue)
 PrintGameVersionOnTitleScreen: ; 4598 (1:4598)
+IF DEF(_GREEN)
+	coord hl, 6, 8
+ELSE
 	coord hl, 7, 8
+ENDC
 	ld de, VersionOnTitleScreenText
 	jp PlaceString
 
@@ -394,6 +410,9 @@ PrintGameVersionOnTitleScreen: ; 4598 (1:4598)
 VersionOnTitleScreenText: ; 45a1 (1:45a1)
 IF DEF(_RED)
 	db $60,$61,$7F,$65,$66,$67,$68,$69,"@" ; "Red Version"
+ENDC
+IF DEF(_GREEN)
+	db $62,$63,$64,$7F,$65,$66,$67,$68,$69,"@" ; "Green Version"
 ENDC
 IF DEF(_BLUE)
 	db $61,$62,$63,$64,$65,$66,$67,$68,"@" ; "Blue Version"

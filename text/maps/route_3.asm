@@ -44,8 +44,9 @@ _Route3AfterBattleText2:: ; 8d893 (23:5893)
 	done
 
 _Route3BattleText3:: ; 8d8d0 (23:58d0)
-	text "You looked at me,"
-	line "didn't you?"
+	text "Excuse me!"
+	line "You looked at me,"
+	cont "didn't you?"
 	done
 
 _Route3EndBattleText3:: ; 8d8ee (23:58ee)
@@ -101,6 +102,8 @@ _Route3AfterBattleText5:: ; 8d9db (23:59db)
 _Route3BattleText6:: ; 8da08 (23:5a08)
 	text "Hey! You're not"
 	line "wearing shorts!"
+	cont "What's wrong"
+	cont "with you?"
 	done
 
 _Route3EndBattleText6:: ; 8da28 (23:5a28)

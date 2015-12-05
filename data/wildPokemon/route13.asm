@@ -1,5 +1,5 @@
 Route13Mons:
-	IF DEF(_RED) || (DEF(_JAPAN) && DEF(_BLUE))
+	IF DEF(_RED) || DEF(_BLUE)
 		db $14
 		db 24,ODDISH
 		db 25,PIDGEY
@@ -14,7 +14,7 @@ Route13Mons:
 		db $00
 	ENDC
 
-	IF DEF(_GREEN) || (!DEF(_JAPAN) && DEF(_BLUE))
+	IF DEF(_GREEN)
 		db $14
 		db 24,BELLSPROUT
 		db 25,PIDGEY

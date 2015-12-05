@@ -16,11 +16,11 @@ DungeonMons2:
 		db 51,VENOMOTH
 		db 51,KADABRA
 		db 52,RHYDON
-		IF DEF(_RED) || DEF(_GREEN) || (DEF(_BLUE) && !DEF(_JAPAN))
+		IF DEF(_RED) || DEF(_GREEN)
 			db 52,MAROWAK
 		ENDC
-		IF (DEF(_BLUE) && DEF(_JAPAN))
-			db 52,MAROWAK
+		IF DEF(_BLUE)
+			db 52,ALAKAZAM
 		ENDC
 		db 52,ELECTRODE
 		db 56,CHANSEY

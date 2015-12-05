@@ -13,6 +13,17 @@ ENDC
 	cont "for you."
 	done
 
+_MomWakeUpText2::
+	text "MOM: Right."
+	line "All girls dream"
+	cont "of traveling."
+	cont "It said so on TV."
+
+	para "PROF.OAK, next"
+	line "door, is looking"
+	cont "for you."
+	done
+
 _MomHealText1::
 IF DEF(_YELLOW)
 	text "MOM: ",$52,", if"
@@ -44,6 +55,17 @@ _StandByMeText::
 	line "on TV. Four boys"
 	cont "are walking on"
 	cont "railroad tracks."
+
+	para "I better go too."
+	done
+
+_WizardOfOzText::
+	text "There's a movie"
+	line "on TV. A girl in"
+	cont "pigtails is"
+	cont "walking down a"
+	cont "yellow brick"
+	cont "road."
 
 	para "I better go too."
 	done

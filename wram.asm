@@ -2845,6 +2845,8 @@ wSeafoamIslands5CurScript:: ; d668
 	ds 1
 wRoute18GateCurScript:: ; d669
 	ds 1
+wCeruleanPokecenterCurScript::
+	ds 1
 
 	ds 78
 wGameProgressFlagsEnd::
@@ -3134,6 +3136,15 @@ wDayCareMonName:: ds NAME_LENGTH ; da49
 wDayCareMonOT::   ds NAME_LENGTH ; da54
 
 wDayCareMon:: box_struct wDayCareMon ; da5f
+
+wPlayerGender::
+    ds 1
+
+wPhoneCallFlags::
+    ds 1
+
+wExtraFlags::
+    ds 1
 
 wMainDataEnd::
 

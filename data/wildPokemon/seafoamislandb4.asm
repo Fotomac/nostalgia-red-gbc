@@ -9,11 +9,11 @@ IslandMonsB4:
 		db 31,SEEL
 		db 31,SLOWPOKE
 		db 29,SEEL
-		db 39,SLOWBRO
+		db 39,JYNX
 		db 32,GOLBAT
 	ENDC
 
-	IF DEF(_GREEN) || !DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_GREEN)
 		db 31,KRABBY
 		db 31,STARYU
 		db 33,KRABBY
@@ -22,11 +22,11 @@ IslandMonsB4:
 		db 31,SEEL
 		db 31,PSYDUCK
 		db 29,SEEL
-		db 39,GOLDUCK
+		db 39,JYNX
 		db 32,GOLBAT
 	ENDC
 
-	IF DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_BLUE)
 		db 31,KRABBY
 		db 31,STARYU
 		db 33,KRABBY

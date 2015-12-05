@@ -13,7 +13,7 @@ IslandMonsB3:
 		db 37,DEWGONG
 	ENDC
 
-	IF DEF(_GREEN) || !DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_GREEN)
 		db 31,PSYDUCK
 		db 31,SEEL
 		db 33,PSYDUCK
@@ -26,7 +26,7 @@ IslandMonsB3:
 		db 37,DEWGONG
 	ENDC
 
-	IF DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_BLUE)
 		db 31,HORSEA
 		db 31,SEEL
 		db 33,HORSEA

@@ -1980,6 +1980,11 @@ RunMapScript:: ; 101b (0:101b)
 
 LoadWalkingPlayerSpriteGraphics:: ; 104d (0:104d)
 	ld de,RedSprite
+    ld a, [wPlayerGender]
+    bit 2, a
+    jr z, .AreGuy1
+    ld de,LeafSprite
+.AreGuy1
 	ld hl,vNPCSprites
 	jr LoadPlayerSpriteGraphicsCommon
 
@@ -1990,6 +1995,11 @@ LoadSurfingPlayerSpriteGraphics:: ; 1055 (0:1055)
 
 LoadBikePlayerSpriteGraphics:: ; 105d (0:105d)
 	ld de,RedCyclingSprite
+    ld a, [wPlayerGender]
+    bit 2, a
+    jr z, .AreGuy2
+    ld de,LeafCyclingSprite
+.AreGuy2
 	ld hl,vNPCSprites
 
 LoadPlayerSpriteGraphicsCommon:: ; 1063 (0:1063)

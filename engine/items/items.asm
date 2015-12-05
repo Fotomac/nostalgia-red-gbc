@@ -516,6 +516,7 @@ ItemUseBall: ; d687 (3:5687)
 
 	ld hl,ItemUseBallText05
 	call PrintText
+	callba PlayDefeatedWildMonMusic
 
 ; Add the caught Pokémon to the Pokédex.
 	predef IndexToPokedex

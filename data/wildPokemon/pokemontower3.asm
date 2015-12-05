@@ -11,7 +11,7 @@ TowerMons3:
 		db 18,GASTLY
 		db 25,GASTLY
 		db 20,HAUNTER
-		db 25,HAUNTER
+		db 25,GENGAR
 	ELSE
 		db 20,GASTLY
 		db 21,GASTLY

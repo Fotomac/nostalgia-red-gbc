@@ -15,7 +15,7 @@ Route6Mons:
 		db $00
 	ENDC
 
-	IF DEF(_GREEN) || !DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_GREEN)
 		db 13,BELLSPROUT
 		db 13,PIDGEY
 		db 15,PIDGEY
@@ -29,7 +29,7 @@ Route6Mons:
 		db $00
 	ENDC
 
-	IF DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_BLUE)
 		db 13,ODDISH
 		db 13,PIDGEY
 		db 15,PIDGEY

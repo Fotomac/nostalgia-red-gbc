@@ -14,7 +14,7 @@ Route8Mons:
 		db 18,GROWLITHE
 	ENDC
 
-	IF DEF(_GREEN) || !DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_GREEN)
 		db 18,PIDGEY
 		db 18,MEOWTH
 		db 17,SANDSHREW
@@ -27,7 +27,7 @@ Route8Mons:
 		db 18,VULPIX
 	ENDC
 
-	IF DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_BLUE)
 		db 18,PIDGEY
 		db 18,MEOWTH
 		db 17,SANDSHREW
@@ -50,7 +50,7 @@ Route8Mons:
 		db 19,JIGGLYPUFF
 		db 24,JIGGLYPUFF
 		db 20,KADABRA
-		db 27,KADABRA
+		db 27,ALAKAZAM
 	ENDC
 
 	db $00

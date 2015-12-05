@@ -13,7 +13,7 @@ IslandMonsB1:
 		db 37,SEADRA
 	ENDC
 
-	IF DEF(_GREEN) || !DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_GREEN)
 		db 30,SHELLDER
 		db 30,KRABBY
 		db 32,STARYU
@@ -26,7 +26,7 @@ IslandMonsB1:
 		db 37,KINGLER
 	ENDC
 
-	IF DEF(_JAPAN) && DEF(_BLUE)
+	IF DEF(_BLUE)
 		db 30,SHELLDER
 		db 30,KRABBY
 		db 32,STARYU
