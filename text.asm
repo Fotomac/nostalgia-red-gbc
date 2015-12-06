@@ -243,14 +243,16 @@ INCLUDE "text/maps/seafoam_islands_b3f.asm"
 INCLUDE "text/maps/seafoam_islands_b4f.asm"
 
 _AIBattleWithdrawText:: ; 880be (22:40be)
+	text "The @"
 	TX_RAM wTrainerName
-	text " with-"
-	line "drew @"
+	line "withdrew"
+	cont"@"
 	TX_RAM wEnemyMonNick
 	text "!"
 	prompt
 
 _AIBattleUseItemText:: ; 880d5 (22:40d5)
+	text "The @"
 	TX_RAM wTrainerName
 	db $0
 	line "used @"
@@ -1121,7 +1123,7 @@ _MoneyForWinningText:: ; 896dd (22:56dd)
 
 _TrainerDefeatedText:: ; 896f9 (22:56f9)
 	text $52, " defeated"
-	line "@"
+	line "the @"
 	TX_RAM wTrainerName
 	text "!"
 	prompt
@@ -1157,9 +1159,9 @@ _LinkBattleLostText:: ; 89772 (22:5772)
 	prompt
 
 _TrainerAboutToUseText:: ; 89784 (22:5784)
+	text "The @"
 	TX_RAM wTrainerName
-	text " is"
-	line "about to use"
+	line "is about to use"
 	cont"@"
 	TX_RAM wEnemyMonNick
 	text "!"
@@ -1169,9 +1171,10 @@ _TrainerAboutToUseText:: ; 89784 (22:5784)
 	done
 
 _TrainerSentOutText:: ; 897b4 (22:57b4)
+	text "The @"
 	TX_RAM wTrainerName
-	text " sent"
-	line "out @"
+	line "sent out"
+	cont"@"
 	TX_RAM wEnemyMonNick
 	text "!"
 	done
@@ -1479,7 +1482,7 @@ _GrewLevelText:: ; 89c01 (22:5c01)
 	text "!@@"
 
 _WildMonAppearedText:: ; 89c1d (22:5c1d)
-	text "Wild @"
+	text "A wild @"
 	TX_RAM wEnemyMonNick
 	db $0
 	line "appeared!"
@@ -1500,9 +1503,9 @@ _EnemyAppearedText:: ; 89c4f (22:5c4f)
 	prompt
 
 _TrainerWantsToFightText:: ; 89c5e (22:5c5e)
+	text "The @"
 	TX_RAM wTrainerName
-	text " wants"
-	line "to fight!"
+	line "wants to fight!"
 	prompt
 
 _UnveiledGhostText:: ; 89c73 (22:5c73)
