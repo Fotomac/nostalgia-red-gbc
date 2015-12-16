@@ -2032,7 +2032,7 @@ Mon078_EvosMoves: ; 3b8b3 (e:78b3)
 Mon019_EvosMoves: ; 3b8c1 (e:78c1)
 ;RATTATA
 ;Evolutions
-	db EV_LEVEL,20,RATICATE
+	db EV_LEVEL,16,RATICATE
 	db 0
 ;Learnset
 	db 7,QUICK_ATTACK
