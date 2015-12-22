@@ -245,6 +245,7 @@ INCLUDE "text/maps/seafoam_islands_b4f.asm"
 _AIBattleWithdrawText:: ; 880be (22:40be)
 	text "The @"
 	TX_RAM wTrainerName
+	db $0
 	line "withdrew"
 	cont"@"
 	TX_RAM wEnemyMonNick
@@ -1161,6 +1162,7 @@ _LinkBattleLostText:: ; 89772 (22:5772)
 _TrainerAboutToUseText:: ; 89784 (22:5784)
 	text "The @"
 	TX_RAM wTrainerName
+	db $0
 	line "is about to use"
 	cont"@"
 	TX_RAM wEnemyMonNick
@@ -1173,6 +1175,7 @@ _TrainerAboutToUseText:: ; 89784 (22:5784)
 _TrainerSentOutText:: ; 897b4 (22:57b4)
 	text "The @"
 	TX_RAM wTrainerName
+	db $0
 	line "sent out"
 	cont"@"
 	TX_RAM wEnemyMonNick
@@ -1505,6 +1508,7 @@ _EnemyAppearedText:: ; 89c4f (22:5c4f)
 _TrainerWantsToFightText:: ; 89c5e (22:5c5e)
 	text "The @"
 	TX_RAM wTrainerName
+	db $0
 	line "wants to fight!"
 	prompt
 
