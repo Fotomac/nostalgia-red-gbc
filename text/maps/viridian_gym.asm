@@ -1,10 +1,12 @@
 _ViridianGymText_74ace:: ; 95e09 (25:5e09)
-	text "Fwahahaha! This is"
-	line "my hideout!"
+	text "Fwahahaha! Welcome"
+	line "to my hideout!"
 
-	para "I planned to"
-	line "resurrect TEAM"
-	cont "ROCKET here!"
+	para "It shall be so"
+	line "until I can"
+	cont "restore TEAM"
+	cont "ROCKET to its"
+	cont "former glory."
 
 	para "But, you have"
 	line "caught me again!"
