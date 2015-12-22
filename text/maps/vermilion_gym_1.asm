@@ -20,9 +20,12 @@ IF DEF(_YELLOW)
 	para "I'll shock you"
 	line "into surrender!"
 ELSE
-	text "Hey, kid! What do"
-	line "you think you're"
-	cont "doing here?"
+	text "Ten-hut! Welcome"
+	line "to VERMILION GYM!"
+
+	para "Huh? Hey, kid!"
+	line "What do you think"
+	cont "you're doing here?"
 
 	para "You won't live"
 	line "long in combat!"
