@@ -10,16 +10,16 @@ RedsHouse1FText1: ; 4816f (12:416f) Mom
 	ld a, [wd72e]
 	bit 3, a
 	jr nz, .heal ; if player has received a Pokémon from Oak, heal team
-    ld a, [wPlayerGender]
-    bit 2, a
-    jr nz, .girl
+	ld a, [wPlayerGender]
+	bit 2, a
+	jr nz, .girl
 	ld hl, MomWakeUpText
 	call PrintText
 	jr .done
 .girl
-    ld hl, MomWakeUpText2
-    call PrintText
-    jr .done
+	ld hl, MomWakeUpText2
+	call PrintText
+	jr .done
 .heal
 	call MomHealPokemon
 .done
@@ -66,10 +66,11 @@ RedsHouse1FText2: ; 0x481c6 TV
 	cp SPRITE_FACING_UP
 	ld hl,TVWrongSideText
 	jr nz,.notUp
-    ld a, [wPlayerGender]
-    bit 2, a
-    jr nz, .girl
+	ld a, [wPlayerGender]
+	bit 2, a
+	jr nz, .girl
 	ld hl,StandByMeText
+	jr .notUp
 .girl
 	ld hl,WizardOfOzText
 .notUp
