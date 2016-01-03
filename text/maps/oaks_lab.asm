@@ -10,7 +10,7 @@ IF DEF(_YELLOW)
 ENDC
 	done
 
-_OaksLabText40:: ; 94d79 (25:4d79)
+_OaksLabText41:: ; 94d79 (25:4d79)
 IF DEF(_YELLOW)
 	text $53,": Humph!"
 	line "I'll get a better"
@@ -26,7 +26,7 @@ ELSE
 	done
 ENDC
 
-_OaksLabText41:: ; 94dbd (25:4dbd)
+_OaksLabText42:: ; 94dbd (25:4dbd)
 IF DEF(_YELLOW)
 	text $53,": Heh, my"
 ELSE
@@ -36,7 +36,7 @@ ENDC
 	cont "lot stronger."
 	done
 
-_OaksLabText39:: ; 94ddf (25:4ddf)
+_OaksLabText40:: ; 94ddf (25:4ddf)
 IF DEF(_YELLOW)
 	text "That's a #"
 	line "BALL. There's a"
@@ -161,47 +161,10 @@ _OaksLabAroundWorldText:: ; 95045 (25:5045)
 	text "#MON around the"
 	line "world wait for"
 	cont "you, ", $52, "!"
-	done
-
-_OaksLabGivePokeballsText1:: ; 9506d (25:506d)
-	text "OAK: You can't get"
-	line "detailed data on"
-	cont "#MON by just"
-	cont "seeing them."
-
-	para "You must catch"
-	line "them! Use these"
-	cont "to capture wild"
-	cont "#MON."
-
-	para $52, " got 5"
-	line "# BALLs!@@"
-
-_OaksLabGivePokeballsText2:: ; 950f2 (25:50f2)
-	db $0
-	para "When a wild"
-	line "#MON appears,"
-	cont "it's fair game."
-
-IF DEF(_YELLOW)
-	para "Just like I showed"
-	line "you, throw a #"
-ELSE
-	para "Just throw a #"
-ENDC
-	line "BALL at it and"
-	cont "try to catch it!"
-
-	para "This won't always"
-	line "work, though."
-
-	para "A healthy #MON"
-	line "could escape. You"
-	cont "have to be lucky!"
-	done
+	prompt
 
 _OaksLabPleaseVisitText:: ; 9519e (25:519e)
-	text "OAK: Come see me"
+	text "Come see me"
 	line "sometimes."
 
 	para "I want to know how"
@@ -496,8 +459,42 @@ _OaksLabText25:: ; 9562a (25:562a)
 	para $52, " got"
 	line "#DEX from OAK!@@"
 
-_OaksLabText26:: ; 95664 (25:5664)
-	text "To make a complete"
+_OaksLabText26:: ; 9506d (25:506d)
+	text "OAK: You can't get"
+	line "detailed data on"
+	cont "#MON by just"
+	cont "seeing them."
+
+	para "You must catch"
+	line "them! Use these"
+	cont "to capture wild"
+	cont "#MON."
+
+	para $52, " got 5"
+	line "# BALLs!@@"
+
+_OaksLabText27:: ; 950f2 (25:50f2)
+	text "When a wild"
+	line "#MON appears,"
+	cont "it's fair game."
+
+IF DEF(_YELLOW)
+	para "Just like I showed"
+	line "you, throw a #"
+ELSE
+	para "Just throw a #"
+ENDC
+	line "BALL at it and"
+	cont "try to catch it!"
+
+	para "This won't always"
+	line "work, though."
+
+	para "A healthy #MON"
+	line "could escape. You"
+	cont "have to be lucky!"
+
+	para "To make a complete"
 	line "guide on all the"
 	cont "#MON in the"
 	cont "world..."
@@ -519,7 +516,7 @@ _OaksLabText26:: ; 95664 (25:5664)
 	cont "#MON history!"
 	done
 
-_OaksLabText27:: ; 95741 (25:5741)
+_OaksLabText28:: ; 95741 (25:5741)
 	text $53, ": Alright"
 	line "Gramps! Leave it"
 	cont "all to me!"
