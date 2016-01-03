@@ -587,13 +587,17 @@ OaksLabScript16: ; 1cf12 (7:4f12)
 	ld a, $1a
 	ld [hSpriteIndexOrTextID], a
 	call DisplayTextID
+	call DelayFrame
+	ld a, $1b
+	ld [hSpriteIndexOrTextID], a
+	call DisplayTextID
 	ld a, $1
 	ld [H_SPRITEINDEX], a
 	ld a, SPRITE_FACING_RIGHT
 	ld [hSpriteFacingDirection], a
 	call SetSpriteFacingDirectionAndDelay
 	call Delay3
-	ld a, $1b
+	ld a, $1c
 	ld [hSpriteIndexOrTextID], a
 	call DisplayTextID
 	SetEvent EVENT_GOT_POKEDEX
@@ -758,8 +762,9 @@ OaksLabTextPointers: ; 1d082 (7:5082)
 	dw OaksLabText36
 	dw OaksLabText37
 	dw OaksLabText38
+	dw OaksLabText39
 
-OaksLabText28: ; 1d0ce (7:50ce)
+OaksLabText29: ; 1d0ce (7:50ce)
 OaksLabText1: ; 1d0ce (7:50ce)
 	TX_ASM
 	CheckEvent EVENT_FOLLOWED_OAK_INTO_LAB_2
@@ -770,11 +775,11 @@ OaksLabText1: ; 1d0ce (7:50ce)
 .asm_1d0de
 	bit 2, a
 	jr nz, .asm_1d0ea
-	ld hl, OaksLabText40
+	ld hl, OaksLabText41
 	call PrintText
 	jr .asm_1d0f0
 .asm_1d0ea
-	ld hl, OaksLabText41
+	ld hl, OaksLabText42
 	call PrintText
 .asm_1d0f0
 	jp TextScriptEnd
@@ -783,15 +788,15 @@ OaksLabGaryText1: ; 1d0f3 (7:50f3)
 	TX_FAR _OaksLabGaryText1
 	db "@"
 
-OaksLabText40: ; 1d0f8 (7:50f8)
-	TX_FAR _OaksLabText40
-	db "@"
-
-OaksLabText41: ; 1d0fd (7:50fd)
+OaksLabText41: ; 1d0f8 (7:50f8)
 	TX_FAR _OaksLabText41
 	db "@"
 
-OaksLabText29: ; 1d102 (7:5102)
+OaksLabText42: ; 1d0fd (7:50fd)
+	TX_FAR _OaksLabText42
+	db "@"
+
+OaksLabText30: ; 1d102 (7:5102)
 OaksLabText2: ; 1d102 (7:5102)
 	TX_ASM
 	ld a, STARTER2
@@ -802,7 +807,7 @@ OaksLabText2: ; 1d102 (7:5102)
 	ld b, $2
 	jr OaksLabScript_1d133
 
-OaksLabText30: ; 1d113 (7:5113)
+OaksLabText31: ; 1d113 (7:5113)
 OaksLabText3: ; 1d113 (7:5113)
 	TX_ASM
 	ld a, STARTER3
@@ -813,7 +818,7 @@ OaksLabText3: ; 1d113 (7:5113)
 	ld b, $3
 	jr OaksLabScript_1d133
 
-OaksLabText31: ; 1d124 (7:5124)
+OaksLabText32: ; 1d124 (7:5124)
 OaksLabText4: ; 1d124 (7:5124)
 	TX_ASM
 	ld a, STARTER1
@@ -832,12 +837,12 @@ OaksLabScript_1d133: ; 1d133 (7:5133)
 	jp nz, OaksLabScript_1d22d
 	CheckEventReuseA EVENT_OAK_ASKED_TO_CHOOSE_MON
 	jr nz, OaksLabScript_1d157
-	ld hl, OaksLabText39
+	ld hl, OaksLabText40
 	call PrintText
 	jp TextScriptEnd
 
-OaksLabText39: ; 1d152 (7:5152)
-	TX_FAR _OaksLabText39
+OaksLabText40: ; 1d152 (7:5152)
+	TX_FAR _OaksLabText40
 	db "@"
 
 OaksLabScript_1d157: ; 1d157 (7:5157)
@@ -961,7 +966,7 @@ OaksLabLastMonText: ; 1d243 (7:5243)
 	TX_FAR _OaksLabLastMonText
 	db "@"
 
-OaksLabText32: ; 1d248 (7:5248)
+OaksLabText33: ; 1d248 (7:5248)
 OaksLabText5: ; 1d248 (7:5248)
 	TX_ASM
 	CheckEvent EVENT_PALLET_AFTER_GETTING_POKEBALLS
@@ -985,8 +990,6 @@ OaksLabText5: ; 1d248 (7:5248)
 	ld b,POKE_BALL
 	call IsItemInBag
 	jr nz, .asm_1d2e7
-	CheckEvent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
-	jr nz, .asm_1d2d0
 	CheckEvent EVENT_GOT_POKEDEX
 	jr nz, .asm_1d2c8
 	CheckEventReuseA EVENT_BATTLED_RIVAL_IN_OAKS_LAB
@@ -1016,22 +1019,8 @@ OaksLabText5: ; 1d248 (7:5248)
 	ld [wOaksLabCurScript], a
 	jr .asm_1d2ed
 .asm_1d2c8
-    ld hl, OaksLabAroundWorldText
-    call PrintText
-    lb bc, POKE_BALL, 5
-    call GiveItem
-    ld hl, OaksLabGivePokeballsText
-    call PrintText
-    jr .asm_1d2ed
-.asm_1d2d0
-	CheckAndSetEvent EVENT_GOT_POKEBALLS_FROM_OAK
-	jr nz, .asm_1d2e7
-	lb bc, POKE_BALL, 5
-	call GiveItem
-	ld hl, OaksLabGivePokeballsText
+	ld hl, OaksLabAroundWorldText
 	call PrintText
-	jr .asm_1d2ed
-.asm_1d2e7
 	ld hl, OaksLabPleaseVisitText
 	call PrintText
 .asm_1d2ed
@@ -1059,12 +1048,6 @@ OaksLabAroundWorldText: ; 1d309 (7:5309)
 	TX_FAR _OaksLabAroundWorldText
 	db "@"
 
-OaksLabGivePokeballsText: ; 1d30e (7:530e)
-	TX_FAR _OaksLabGivePokeballsText1
-	db $11
-	TX_FAR _OaksLabGivePokeballsText2
-	db "@"
-
 OaksLabPleaseVisitText: ; 1d318 (7:5318)
 	TX_FAR _OaksLabPleaseVisitText
 	db "@"
@@ -1073,8 +1056,8 @@ OaksLabText_1d31d: ; 1d31d (7:531d)
 	TX_FAR _OaksLabText_1d31d
 	db "@"
 
+OaksLabText35: ; 1d322 (7:5322)
 OaksLabText34: ; 1d322 (7:5322)
-OaksLabText33: ; 1d322 (7:5322)
 OaksLabText7: ; 1d322 (7:5322)
 OaksLabText6: ; 1d322 (7:5322)
 	TX_ASM
@@ -1086,12 +1069,12 @@ OaksLabText_1d32c: ; 1d32c (7:532c)
 	TX_FAR _OaksLabText_1d32c
 	db "@"
 
-OaksLabText35: ; 1d331 (7:5331)
+OaksLabText36: ; 1d331 (7:5331)
 OaksLabText8: ; 1d331 (7:5331)
 	TX_FAR _OaksLabText8
 	db "@"
 
-OaksLabText36: ; 1d336 (7:5336)
+OaksLabText37: ; 1d336 (7:5336)
 OaksLabText9: ; 1d336 (7:5336)
 	TX_ASM
 	ld hl, OaksLabText_1d340
@@ -1220,16 +1203,25 @@ OaksLabText25: ; 1d3eb (7:53eb)
 	TX_FAR _OaksLabText25
 	db $11, "@"
 
-OaksLabText26: ; 1d3f1 (7:53f1)
+OaksLabText26:
 	TX_FAR _OaksLabText26
 	db "@"
+	db $11 ; play received item sound
+	db $08 ; asm
+	lb bc, POKE_BALL,5
+	call GiveItem
+	jp TextScriptEnd
 
-OaksLabText27: ; 1d3f6 (7:53f6)
+OaksLabText27: ; 1d3f1 (7:53f1)
 	TX_FAR _OaksLabText27
 	db "@"
 
+OaksLabText28: ; 1d3f6 (7:53f6)
+	TX_FAR _OaksLabText28
+	db "@"
+
+OaksLabText39: ; 1d3fb (7:53fb)
 OaksLabText38: ; 1d3fb (7:53fb)
-OaksLabText37: ; 1d3fb (7:53fb)
 OaksLabText11: ; 1d3fb (7:53fb)
 OaksLabText10: ; 1d3fb (7:53fb)
 	TX_ASM
