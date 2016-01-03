@@ -1021,6 +1021,7 @@ OaksLabText5: ; 1d248 (7:5248)
 .asm_1d2c8
 	ld hl, OaksLabAroundWorldText
 	call PrintText
+.asm_1d2e7
 	ld hl, OaksLabPleaseVisitText
 	call PrintText
 .asm_1d2ed
