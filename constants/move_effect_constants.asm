@@ -76,7 +76,7 @@ const_value = 0
 	const DEFENSE_DOWN_SIDE_EFFECT   ; $45
 	const SPEED_DOWN_SIDE_EFFECT     ; $46
 	const SPECIAL_DOWN_SIDE_EFFECT   ; $47
-	const UNUSED_EFFECT_48           ; $48
+	const ATTACK_UP_SIDE_EFFECT      ; $48
 	const UNUSED_EFFECT_49           ; $49
 	const UNUSED_EFFECT_4A           ; $4A
 	const UNUSED_EFFECT_4B           ; $4B
