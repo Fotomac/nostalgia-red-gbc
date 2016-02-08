@@ -531,12 +531,13 @@ Mon009_EvosMoves: ; 3b346 (e:7346)
 ;Evolutions
 	db 0
 ;Learnset
-	db 8,BUBBLE
-	db 15,WATER_GUN
-	db 24,BITE
-	db 31,WITHDRAW
-	db 42,SKULL_BASH
-	db 52,HYDRO_PUMP
+	db 7,BUBBLE
+	db 13,WATER_GUN
+	db 22,IRON_TAIL
+	db 30,BITE
+	db 43,WITHDRAW
+	db 55,SKULL_BASH
+	db 65,HYDRO_PUMP
 	db 0
 
 Mon127_EvosMoves: ; 3b354 (e:7354)
@@ -1786,6 +1787,12 @@ Mon036_EvosMoves: ; 3b7df (e:77df)
 ;Evolutions
 	db 0
 ;Learnset
+	db 13,SING
+	db 18,DOUBLESLAP
+	db 24,MINIMIZE
+	db 31,METRONOME
+	db 39,DEFENSE_CURL
+	db 48,LIGHT_SCREEN
 	db 0
 
 Mon110_EvosMoves: ; 3b7e1 (e:77e1)
@@ -2157,12 +2164,13 @@ Mon004_EvosMoves: ; 3b938 (e:7938)
 	db EV_LEVEL,16,CHARMELEON
 	db 0
 ;Learnset
-	db 9,EMBER
-	db 15,LEER
-	db 22,RAGE
-	db 30,SLASH
-	db 38,FLAMETHROWER
-	db 46,FIRE_SPIN
+	db 7,EMBER
+	db 13,METAL_CLAW
+	db 20,LEER
+	db 27,RAGE
+	db 34,SLASH
+	db 41,FLAMETHROWER
+	db 48,FIRE_SPIN
 	db 0
 
 Mon007_EvosMoves: ; 3b949 (e:7949)
@@ -2171,12 +2179,13 @@ Mon007_EvosMoves: ; 3b949 (e:7949)
 	db EV_LEVEL,16,WARTORTLE
 	db 0
 ;Learnset
-	db 8,BUBBLE
-	db 15,WATER_GUN
-	db 22,BITE
-	db 28,WITHDRAW
-	db 35,SKULL_BASH
-	db 42,HYDRO_PUMP
+	db 7,BUBBLE
+	db 13,WATER_GUN
+	db 20,IRON_TAIL
+	db 27,BITE
+	db 34,WITHDRAW
+	db 41,SKULL_BASH
+	db 48,HYDRO_PUMP
 	db 0
 
 Mon005_EvosMoves: ; 3b95a (e:795a)
@@ -2185,12 +2194,13 @@ Mon005_EvosMoves: ; 3b95a (e:795a)
 	db EV_LEVEL,36,CHARIZARD
 	db 0
 ;Learnset
-	db 9,EMBER
-	db 15,LEER
-	db 24,RAGE
-	db 33,SLASH
-	db 42,FLAMETHROWER
-	db 56,FIRE_SPIN
+	db 7,EMBER
+	db 13,METAL_CLAW
+	db 22,LEER
+	db 30,RAGE
+	db 38,SLASH
+	db 46,FLAMETHROWER
+	db 54,FIRE_SPIN
 	db 0
 
 Mon008_EvosMoves: ; 3b96b (e:796b)
@@ -2199,12 +2209,13 @@ Mon008_EvosMoves: ; 3b96b (e:796b)
 	db EV_LEVEL,36,BLASTOISE
 	db 0
 ;Learnset
-	db 8,BUBBLE
-	db 15,WATER_GUN
-	db 24,BITE
-	db 31,WITHDRAW
-	db 39,SKULL_BASH
-	db 47,HYDRO_PUMP
+	db 7,BUBBLE
+	db 13,WATER_GUN
+	db 22,IRON_TAIL
+	db 30,BITE
+	db 38,WITHDRAW
+	db 46,SKULL_BASH
+	db 54,HYDRO_PUMP
 	db 0
 
 Mon006_EvosMoves: ; 3b97c (e:797c)
@@ -2212,12 +2223,13 @@ Mon006_EvosMoves: ; 3b97c (e:797c)
 ;Evolutions
 	db 0
 ;Learnset
-	db 9,EMBER
-	db 15,LEER
-	db 24,RAGE
-	db 36,SLASH
-	db 46,FLAMETHROWER
-	db 55,FIRE_SPIN
+	db 7,EMBER
+	db 13,METAL_CLAW
+	db 22,LEER
+	db 30,RAGE
+	db 43,SLASH
+	db 55,FLAMETHROWER
+	db 65,FIRE_SPIN
 	db 0
 
 Mon187_EvosMoves: ; 3b98a (e:798a)
