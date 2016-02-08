@@ -164,6 +164,8 @@ const_value = 1
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
+	const METAL_CLAW   ; a5
+	const IRON_TAIL    ; a6
 
 NUM_ATTACKS EQU const_value + -1
 
