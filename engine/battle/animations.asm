@@ -2429,7 +2429,7 @@ MoveSoundTable: ; 798bc (1e:58bc)
 	db SFX_BATTLE_2A,         $f0,$60 ; BUBBLEBEAM
 	db SFX_BATTLE_28,         $00,$80 ; AURORA_BEAM
 	db SFX_BATTLE_36,         $00,$80 ; HYPER_BEAM
-	db SFX_PECK,$01,          $a0 ; PECK
+	db SFX_PECK,              $01,$a0 ; PECK
 	db SFX_BATTLE_13,         $f0,$20 ; DRILL_PECK
 	db SFX_BATTLE_23,         $01,$c0 ; SUBMISSION
 	db SFX_BATTLE_23,         $00,$80 ; LOW_KICK
@@ -2530,6 +2530,8 @@ MoveSoundTable: ; 798bc (1e:58bc)
 	db SFX_BATTLE_26,         $f0,$ff ; SUPER_FANG
 	db SFX_NOT_VERY_EFFECTIVE,$01,$ff ; SLASH
 	db SFX_BATTLE_2C,         $d8,$04 ; SUBSTITUTE
+	db SFX_NOT_VERY_EFFECTIVE,$00,$ff ; METAL_CLAW
+	db SFX_BATTLE_21,         $01,$80 ; IRON_TAIL
 	db SFX_BATTLE_0B,         $00,$80 ; STRUGGLE
 	db SFX_BATTLE_0B,         $00,$80
 
