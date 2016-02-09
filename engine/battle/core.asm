@@ -7217,10 +7217,10 @@ MoveEffectPointerTable: ; 3f150 (f:7150)
 	 dw StatModifierDownEffect    ; DEFENSE_DOWN_SIDE_EFFECT
 	 dw StatModifierDownEffect    ; SPEED_DOWN_SIDE_EFFECT
 	 dw StatModifierDownEffect    ; SPECIAL_DOWN_SIDE_EFFECT
-	 dw StatModifierDownEffect    ; unused effect
-	 dw StatModifierDownEffect    ; unused effect
-	 dw StatModifierDownEffect    ; unused effect
-	 dw StatModifierDownEffect    ; unused effect
+	 dw StatModifierUpEffect      ; ATTACK_UP_SIDE_EFFECT
+	 dw StatModifierUpEffect      ; unused effect
+	 dw StatModifierUpEffect      ; unused effect
+	 dw StatModifierUpEffect      ; unused effect
 	 dw ConfusionSideEffect       ; CONFUSION_SIDE_EFFECT
 	 dw TwoToFiveAttacksEffect    ; TWINEEDLE_EFFECT
 	 dw $0000                     ; unused effect
@@ -7567,6 +7567,16 @@ StatModifierUpEffect: ; 3f428 (f:7428)
 	ld de, wEnemyMoveEffect
 .statModifierUpEffect
 	ld a, [de]
+	cp ATTACK_UP_SIDE_EFFECT
+	jr c, .nonSideEffect1
+	call BattleRandom
+	cp $1a ; 26/256 chance for side effects
+	jp nc, CantRaiseAnymore
+	ld a, [de]
+	sub ATTACK_UP_SIDE_EFFECT ; map each stat to 0-3
+	jr .incrementStatMod
+.nonSideEffect1 ; non-side effects only
+	ld a, [de]
 	sub ATTACK_UP1_EFFECT
 	cp EVASION_UP1_EFFECT + $3 - ATTACK_UP1_EFFECT ; covers all +1 effects
 	jr c, .incrementStatMod
@@ -7577,9 +7587,7 @@ StatModifierUpEffect: ; 3f428 (f:7428)
 	add hl, bc
 	ld b, [hl]
 	inc b ; increment corresponding stat mod
-	ld a, $d
-	cp b ; can't raise stat past +6 ($d or 13)
-	jp c, PrintNothingHappenedText
+	jp z, CantRaiseAnymore ; if stat mod is 13 (+6), can’t raise anymore
 	ld a, [de]
 	cp ATTACK_UP1_EFFECT + $8 ; is it a +2 effect?
 	jr c, .ok
@@ -7716,10 +7724,6 @@ UpdateStatDone: ; 3f4ca (f:74ca)
 RestoreOriginalStatModifier: ; 3f520 (f:7520)
 	pop hl
 	dec [hl]
-
-PrintNothingHappenedText: ; 3f522 (f:7522)
-	ld hl, NothingHappenedText
-	jp PrintText
 
 MonsStatsRoseText: ; 3f528 (f:7528)
 	TX_FAR _MonsStatsRoseText
