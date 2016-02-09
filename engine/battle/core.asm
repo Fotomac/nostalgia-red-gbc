@@ -1017,7 +1017,16 @@ TrainerBattleVictory: ; 3c696 (f:4696)
 	cp LINK_STATE_BATTLING
 	ld a, b
 	call nz, PlayBattleVictoryMusic
+	ld hl, SpecialTrainerIDs
+	ld a, [wTrainerClass]
+	ld de, 1
+	call IsInArray
+	jr c, .specialTrainer1
 	ld hl, TrainerDefeatedText
+	jr .next12
+.specialTrainer1
+	ld hl, TrainerDefeatedText2
+.next12
 	call PrintText
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
@@ -1040,6 +1049,10 @@ MoneyForWinningText: ; 3c6e4 (f:46e4)
 
 TrainerDefeatedText: ; 3c6e9 (f:46e9)
 	TX_FAR _TrainerDefeatedText
+	db "@"
+
+TrainerDefeatedText2:
+	TX_FAR _TrainerDefeatedText2
 	db "@"
 
 PlayBattleVictoryMusic: ; 3c6ee (f:46ee)
@@ -1460,7 +1473,16 @@ EnemySendOutFirstMon: ; 3c92a (f:492a)
 	ld a,[wOptions]
 	bit 6,a
 	jr nz,.next4
+	ld hl, SpecialTrainerIDs
+	ld a, [wTrainerClass]
+	ld de, 1
+	call IsInArray
+	jr c, .specialTrainer2
 	ld hl, TrainerAboutToUseText
+	jr .next11
+.specialTrainer2
+	ld hl, TrainerAboutToUseText2
+.next11
 	call PrintText
 	coord hl, 0, 7
 	lb bc, 8, 1
@@ -1503,7 +1525,16 @@ EnemySendOutFirstMon: ; 3c92a (f:492a)
 	ld b, SET_PAL_BATTLE
 	call RunPaletteCommand
 	call GBPalNormal
+	ld hl, SpecialTrainerIDs
+	ld a, [wTrainerClass]
+	ld de, 1
+	call IsInArray
+	jr c, .specialTrainer3
 	ld hl,TrainerSentOutText
+	jr .next10
+.specialTrainer3
+	ld hl, TrainerSentOutText2
+.next10
 	call PrintText
 	ld a,[wEnemyMonSpecies2]
 	ld [wcf91],a
@@ -1531,8 +1562,16 @@ TrainerAboutToUseText: ; 3ca79 (f:4a79)
 	TX_FAR _TrainerAboutToUseText
 	db "@"
 
+TrainerAboutToUseText2: ; 3ca79 (f:4a79)
+	TX_FAR _TrainerAboutToUseText2
+	db "@"
+
 TrainerSentOutText: ; 3ca7e (f:4a7e)
 	TX_FAR _TrainerSentOutText
+	db "@"
+
+TrainerSentOutText2: ; 3ca7e (f:4a7e)
+	TX_FAR _TrainerSentOutText2
 	db "@"
 
 ; tests if the player has any pokemon that are not fainted
@@ -7302,10 +7341,10 @@ PoisonEffect: ; 3f24f (f:724f)
 	jr nz, .noEffect ; miss if target is already statused
 	ld a, [hli]
 	cp POISON ; can't posion a poison-type target
-	jr z, .noEffect
+	jr z, .versusPoison
 	ld a, [hld]
 	cp POISON ; can't posion a poison-type target
-	jr z, .noEffect
+	jr z, .versusPoison
 	ld a, [de]
 	cp POISON_SIDE_EFFECT1
 	ld b, $34 ; ~20% chance of poisoning
@@ -7370,6 +7409,10 @@ PoisonEffect: ; 3f24f (f:724f)
 	ld c, 50
 	call DelayFrames
 	jp PrintDidntAffectText
+.versusPoison
+	ld c, 50
+	call DelayFrames
+	jp PrintDoesntAffectText
 
 PoisonedText: ; 3f2df (f:72df)
 	TX_FAR _PoisonedText
@@ -7917,6 +7960,13 @@ CantLowerAnymore_Pop: ; 3f64d (f:764d)
 CantLowerAnymore: ; 3f650 (f:7650)
 	ld a, [de]
 	cp ATTACK_DOWN_SIDE_EFFECT
+	ret nc
+	ld hl, NothingHappenedText
+	jp PrintText
+
+CantRaiseAnymore:
+	ld a, [de]
+	cp ATTACK_UP_SIDE_EFFECT
 	ret nc
 	ld hl, NothingHappenedText
 	jp PrintText
@@ -8733,3 +8783,22 @@ PlayDefeatedWildMonMusic:
   call EndLowHealthAlarm
   ld a, MUSIC_DEFEATED_WILD_MON
   jp PlayBattleVictoryMusic
+
+SpecialTrainerIDs:
+	db SONY1
+	db GIOVANNI
+	db ROCKET
+	db BRUNO
+	db BROCK
+	db MISTY
+	db LT__SURGE
+	db ERIKA
+	db KOGA
+	db BLAINE
+	db SABRINA
+	db SONY2
+	db SONY3
+	db LORELEI
+	db AGATHA
+	db LANCE
+	db "@"
