@@ -2575,7 +2575,7 @@ GetSavedEndBattleTextPointer:: ; 33b7 (0:33b7)
 	ret
 
 TrainerEndBattleText:: ; 33cf (0:33cf)
-	TX_FAR _TrainerNameText
+	;TX_FAR _TrainerNameText
 	TX_ASM
 	call GetSavedEndBattleTextPointer
 	call TextCommandProcessor
