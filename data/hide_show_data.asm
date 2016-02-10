@@ -411,12 +411,13 @@ MapHS33: ; cc16 (3:4c16)
 	db VIRIDIAN_FOREST,$06,Show
 	db VIRIDIAN_FOREST,$07,Show
 MapHS3B: ; cc1f (3:4c1f)
-	db MT_MOON_1,$08,Show
+	db MT_MOON_1,$08,Hide
 	db MT_MOON_1,$09,Show
 	db MT_MOON_1,$0A,Show
 	db MT_MOON_1,$0B,Show
 	db MT_MOON_1,$0C,Show
 	db MT_MOON_1,$0D,Show
+	db MT_MOON_1,$0E,Show
 MapHS3D: ; cc31 (3:4c31)
 	db MT_MOON_3,$06,Show
 	db MT_MOON_3,$07,Show
