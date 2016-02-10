@@ -109,6 +109,7 @@ const_value = 0
 	const HS_VIRIDIAN_FOREST_ITEM_1       ; 64 X
 	const HS_VIRIDIAN_FOREST_ITEM_2       ; 65 X
 	const HS_VIRIDIAN_FOREST_ITEM_3       ; 66 X
+	const HS_BROCK_MT__MOON
 	const HS_MT_MOON_1_ITEM_1             ; 67 X
 	const HS_MT_MOON_1_ITEM_2             ; 68 X
 	const HS_MT_MOON_1_ITEM_3             ; 69 X
