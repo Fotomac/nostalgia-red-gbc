@@ -21,7 +21,14 @@ PrintBeginningBattleText: ; 58d99 (16:4d99)
 	call .playSFX
 	ld c, 20
 	call DelayFrames
+	ld hl, SpecialTrainerIDs
+	ld a, [wTrainerClass]
+	ld de, 1
+	call IsInArray
+	jr c, .specialTrainer
 	ld hl, TrainerWantsToFightText
+.specialTrainer
+	ld hl, TrainerWantsToFightText2
 .wildBattle
 	push hl
 	callab DrawAllPokeballs
@@ -84,6 +91,10 @@ EnemyAppearedText: ; 58e45 (16:4e45)
 
 TrainerWantsToFightText: ; 58e4a (16:4e4a)
 	TX_FAR _TrainerWantsToFightText
+	db "@"
+
+TrainerWantsToFightText2:
+	TX_FAR _TrainerWantsToFightText2
 	db "@"
 
 UnveiledGhostText: ; 58e4f (16:4e4f)
