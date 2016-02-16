@@ -20,6 +20,7 @@ MtMoon1TextPointers: ; 499e1 (12:59e1)
 	dw MtMoon1Text5
 	dw MtMoon1Text6
 	dw MtMoon1Text7
+	dw MtMoon1Text8
 	dw PickUpItemText
 	dw PickUpItemText
 	dw PickUpItemText
@@ -92,6 +93,94 @@ MtMoon1TrainerHeader7: ; 49a45 (12:5a45)
 	dw MtMoon1EndBattleText8 ; TextEndBattle
 	dw MtMoon1EndBattleText8 ; TextEndBattle
 
+MtMoon1TrainerHeader8: ; 49a45 (12:5a45)
+	dbEventFlagBit EVENT_BEAT_MT_MOON_1_TRAINER_8
+	dwEventFlagAddress EVENT_BEAT_MT_MOON_1_TRAINER_8
+	dw MtMoon1BattleText9 ; TextBeforeBattle
+	dw MtMoon1AfterBattleText9 ; TextAfterBattle
+	dw MtMoon1EarnFossilText ; TextEarnFossil
+	dw MtMoon1TooManyItemsText ; TextTooManyItems
+	dw MtMoon1EndBattleText9 ; TextEndBattle
+	dw MtMoon1EndBattleText9 ; TextEndBattle
+
+MtMoonBrock: ; 19359 (6:5359)
+	ld a, [wd730]
+	bit 1, a
+	ret nz
+	ld a, HS_BROCK_MT__MOON
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, $6
+	ld [wMtMoon1CurScript], a
+	ret
+
+MtMoon1BrockBattleText: ; 1967c (6:567c)
+	TX_ASM
+	CheckEvent EVENT_BEAT_BROCK_ON_MT__MOON
+	jr nz, .asm_4ca20
+	ld hl, MtMoon1BattleText9
+	call PrintText
+	ld hl, wd72d
+	set 0, [hl]
+	set 1, [hl]
+	ld hl, MtMoon1EndBattleText9
+	ld de, MtMoon1EndBattleText9
+	call SaveEndBattleTextPointers
+	ld a, [hSpriteIndexOrTextID]
+	ld [wSpriteIndex], a
+	call EngageMapTrainer
+	call InitBattleEnemyParameters
+	ld a, $4
+	ld [wCeruleanCityCurScript], a
+	jp TextScriptEnd
+.asm_4ca20
+	ld hl, MtMoon1AfterBattleText9
+	call PrintText
+	CheckEvent EVENT_GOT_DOME_FOSSIL
+	jr nz, .domeFossil
+	CheckEventReuseA EVENT_GOT_HELIX_FOSSIL
+	lb bc, DOME_FOSSIL
+	jr .giveFossil
+.domeFossil
+	lb bc, HELIX_FOSSIL
+.giveFossil
+	call GiveItem
+	jr c, .Success
+	ld hl, FossilNoRoomText
+	call PrintText
+	jr .Done
+.Success
+	ld a, $1
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	ld hl, ReceivedFossilText
+	call PrintText
+	ld a,[wSpriteStateData1 + 9]
+	cp SPRITE_FACING_UP
+	ld hl,WalkStraightDown
+	jr nz,.Done
+	ld hl,WalkAroundPlayer
+.Done
+	jp TextScriptEnd
+
+WalkStraightDown: ; 19600 (6:5600)
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db $ff
+
+WalkAroundPlayer: ; 19600 (6:5600)
+	db NPC_MOVEMENT_LEFT
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db $FF
+
 	db $ff
 
 MtMoon1Text1: ; 49a52 (12:5a52)
@@ -133,6 +222,12 @@ MtMoon1Text6: ; 49a84 (12:5a84)
 MtMoon1Text7: ; 49a8e (12:5a8e)
 	TX_ASM
 	ld hl, MtMoon1TrainerHeader7
+	call TalkToTrainer
+	jp TextScriptEnd
+
+MtMoon1Text8: ; 49a8e (12:5a8e)
+	TX_ASM
+	ld hl, MtMoon1BrockBattleText
 	call TalkToTrainer
 	jp TextScriptEnd
 
@@ -218,6 +313,28 @@ MtMoon1EndBattleText8: ; 49af7 (12:5af7)
 
 MtMoon1AfterBattleText8: ; 49afc (12:5afc)
 	TX_FAR _MtMoon1AfterBattleText8
+	db "@"
+
+MtMoon1BattleText9: ; 49af2 (12:5af2)
+	TX_FAR _MtMoon1BattleText9
+	db "@"
+
+MtMoon1EndBattleText9: ; 49af7 (12:5af7)
+	TX_FAR _MtMoon1EndBattleText9
+	db "@"
+
+MtMoon1AfterBattleText9: ; 49afc (12:5afc)
+	TX_FAR _MtMoon1AfterBattleText9
+	db "@"
+
+ReceivedTM28Text: ; 196de (6:56de)
+	TX_FAR _ReceivedFossilText
+	db $0B
+	TX_FAR _ReceivedFossilText2
+	db $0D, "@"
+
+FossilNoRoomText: ; 196e9 (6:56e9)
+	TX_FAR _FossilNoRoomText
 	db "@"
 
 MtMoon1Text14: ; 49b01 (12:5b01)
