@@ -70,11 +70,12 @@ RedsHouse1FText2: ; 0x481c6 TV
 	bit 2, a
 	jr nz, .girl
 	ld hl,StandByMeText
+	call PrintText
 	jr .notUp
 .girl
 	ld hl,WizardOfOzText
-.notUp
 	call PrintText
+.notUp
 	jp TextScriptEnd
 
 StandByMeText: ; 481da (12:41da)
