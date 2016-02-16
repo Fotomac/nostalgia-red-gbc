@@ -246,6 +246,18 @@ _AIBattleWithdrawText:: ; 880be (22:40be)
 	text "The @"
 	TX_RAM wTrainerName
 	db $0
+	line "@"
+	TX_RAM wCurTrainerName
+	text " withdrew"
+	cont"@"
+	TX_RAM wEnemyMonNick
+	text "!"
+	prompt
+
+_AIBattleWithdrawText2:: ; 880be (22:40be)
+	text "The @"
+	TX_RAM wTrainerName
+	db $0
 	line "withdrew"
 	cont"@"
 	TX_RAM wEnemyMonNick
@@ -253,6 +265,21 @@ _AIBattleWithdrawText:: ; 880be (22:40be)
 	prompt
 
 _AIBattleUseItemText:: ; 880d5 (22:40d5)
+	text "The @"
+	TX_RAM wTrainerName
+	db $0
+	line "@"
+	TX_RAM wCurTrainerName
+	text " used"
+	cont"@"
+	TX_RAM wcd6d
+	db $0
+	cont "on @"
+	TX_RAM wEnemyMonNick
+	text "!"
+	prompt
+
+_AIBattleUseItemText2:: ; 880d5 (22:40d5)
 	text "The @"
 	TX_RAM wTrainerName
 	db $0
@@ -1126,6 +1153,16 @@ _TrainerDefeatedText:: ; 896f9 (22:56f9)
 	text $52, " defeated"
 	line "the @"
 	TX_RAM wTrainerName
+	db $0
+	cont"@"
+	TX_RAM wCurTrainerName
+	text "!"
+	prompt
+
+_TrainerDefeatedText2:: ; 896f9 (22:56f9)
+	text $52, " defeated"
+	line "the @"
+	TX_RAM wTrainerName
 	text "!"
 	prompt
 
@@ -1163,6 +1200,22 @@ _TrainerAboutToUseText:: ; 89784 (22:5784)
 	text "The @"
 	TX_RAM wTrainerName
 	db $0
+	line "@"
+	TX_RAM wCurTrainerName
+	db $0
+	cont "is about to use"
+	cont"@"
+	TX_RAM wEnemyMonNick
+	text "!"
+
+	para "Will ", $52
+	line "change #MON?"
+	done
+
+_TrainerAboutToUseText2:: ; 89784 (22:5784)
+	text "The @"
+	TX_RAM wTrainerName
+	db $0
 	line "is about to use"
 	cont"@"
 	TX_RAM wEnemyMonNick
@@ -1173,6 +1226,18 @@ _TrainerAboutToUseText:: ; 89784 (22:5784)
 	done
 
 _TrainerSentOutText:: ; 897b4 (22:57b4)
+	text "The @"
+	TX_RAM wTrainerName
+	db $0
+	line "@"
+	TX_RAM wCurTrainerName
+	text "sent"
+	cont"@"
+	TX_RAM wEnemyMonNick
+	text " out!"
+	done
+
+_TrainerSentOutText2:: ; 897b4 (22:57b4)
 	text "The @"
 	TX_RAM wTrainerName
 	db $0
@@ -1506,6 +1571,16 @@ _EnemyAppearedText:: ; 89c4f (22:5c4f)
 	prompt
 
 _TrainerWantsToFightText:: ; 89c5e (22:5c5e)
+	text "The @"
+	TX_RAM wTrainerName
+	db $0
+	line "@"
+	TX_RAM wCurTrainerName
+	db $0
+	cont "wants to fight!"
+	prompt
+
+_TrainerWantsToFightText2:: ; 89c5e (22:5c5e)
 	text "The @"
 	TX_RAM wTrainerName
 	db $0
