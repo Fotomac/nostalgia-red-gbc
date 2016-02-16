@@ -113,6 +113,67 @@ _MtMoon1AfterBattleText8:: ; 80901 (20:4901)
 	cont "catch one."
 	done
 
+_MtMoon1BattleText9::
+	text "Long time, no see!"
+	line "I was just in the"
+	cont "neighborhood,"
+	cont "digging for"
+	cont "fossils."
+
+	para "It's a hobby of"
+	line "mine! My little"
+	cont "brother FORREST"
+	cont "runs the GYM"
+	cont "whenever I'm out"
+	cont "in these parts."
+
+	para "By the way, I just"
+	line "found this fossil."
+	cont "Wanna battle for"
+	cont "it?"
+	done
+
+_MtMoon1EndBattleText9::
+	text "You've certainly"
+	line "been improving"
+	cont "since we last met."
+	prompt
+
+_MtMoon1AfterBattleText9::
+	text "So, as proof of"
+	line "your latest"
+	cont "victory, here's"
+	cont "this fossil."
+	prompt
+
+_ReceivedFossilText::
+	text $52, " got the"
+	line "@"
+	TX_RAM wcf4b
+	text "!@@"
+
+_ReceivedFossilText2::
+	text "It's been an honor"
+	line "to battle you once"
+	cont "more. I hope we"
+	cont "can do it again"
+	cont "later on!"
+
+	para "For now, though, I"
+	line "will continue to"
+	cont "dig for fossils."
+
+	para "Oh, when you get"
+	line "to VERMILION GYM,"
+	cont "tell LT.SURGE"
+	cont "I said hi!"
+	done
+
+_FossilNoRoomText::
+	text "You don't have"
+	line "room for this!"
+	done
+
 _MtMoon1Text14:: ; 8093a (20:493a)
 	text "Beware! ZUBAT is"
 IF DEF(_YELLOW)
