@@ -882,7 +882,7 @@ SlotMachineMap: ; 378f5 (d:78f5)
 INCLUDE "data/slot_machine_wheels.asm"
 
 SlotMachineTiles1: ; 37a51 (d:7a51)
-IF DEF(_RED)
+IF DEF(_RED) || DEF(_GREEN)
 	INCBIN "gfx/red/slotmachine1.2bpp"
 ENDC
 IF DEF(_BLUE)
