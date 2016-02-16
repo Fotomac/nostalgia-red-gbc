@@ -3137,6 +3137,9 @@ wDayCareMonOT::   ds NAME_LENGTH ; da54
 
 wDayCareMon:: box_struct wDayCareMon ; da5f
 
+wCurTrainerName::
+	ds 13
+
 wPlayerGender::
     ds 1
 
