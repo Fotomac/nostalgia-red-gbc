@@ -252,3 +252,22 @@ PrintComeBackText: ; 58f3a (16:4f3a)
 ComeBackText: ; 58f3e (16:4f3e)
 	TX_FAR _ComeBackText
 	db "@"
+
+SpecialTrainerIDs:
+	db SONY1
+	db GIOVANNI
+	db ROCKET
+	db BRUNO
+	db BROCK
+	db MISTY
+	db LT__SURGE
+	db ERIKA
+	db KOGA
+	db BLAINE
+	db SABRINA
+	db SONY2
+	db SONY3
+	db LORELEI
+	db AGATHA
+	db LANCE
+	db "@"
