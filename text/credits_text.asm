@@ -68,6 +68,9 @@ CredVersion: ; 74343 (1d:4343) ; this 1 byte difference makes all bank addresses
 IF DEF(_RED)
 	db -8, "RED VERSION STAFF@"
 ENDC
+IF DEF(_GREEN)
+	db -8, "GREEN VERSION STAFF@"
+ENDC
 IF DEF(_BLUE)
 	db -8, "BLUE VERSION STAFF@"
 ENDC
