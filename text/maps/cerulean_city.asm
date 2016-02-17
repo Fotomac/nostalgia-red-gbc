@@ -308,7 +308,7 @@ _CeruleanPhoneCallTextBulbasaur::
 	cont "when you arrive."
 
 	para "Good luck!"
-	done
+	prompt
 
 _CeruleanPhoneCallTextCharmander::
 	text "Oh!"
@@ -339,7 +339,7 @@ _CeruleanPhoneCallTextCharmander::
 	cont "when you arrive."
 
 	para "Good luck!"
-	done
+	prompt
 
 _CeruleanPhoneCallTextSquirtle::
 	text "Oh!"
@@ -371,5 +371,5 @@ _CeruleanPhoneCallTextSquirtle::
 	cont "for you."
 
 	para "Good luck!"
-	done
+	prompt
 
