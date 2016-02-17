@@ -154,7 +154,7 @@ _PewterPhoneCallTextBulbasaur::
 	cont "interested."
 
 	para "Good luck!"
-	done
+	prompt
 
 _PewterPhoneCallTextCharmander::
 	text "Oh!"
@@ -197,7 +197,7 @@ _PewterPhoneCallTextCharmander::
 	cont "interested."
 
 	para "Good luck!"
-	done
+	prompt
 
 _PewterPhoneCallTextSquirtle::
 	text "Oh!"
@@ -238,5 +238,5 @@ _PewterPhoneCallTextSquirtle::
 	cont "interested."
 
 	para "Good luck!"
-	done
+	prompt
 
