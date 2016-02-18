@@ -94,12 +94,12 @@ MtMoon1TrainerHeader7: ; 49a45 (12:5a45)
 	dw MtMoon1EndBattleText8 ; TextEndBattle
 
 MtMoon1TrainerHeader8: ; 49a45 (12:5a45)
-	dbEventFlagBit EVENT_BEAT_MT_MOON_1_TRAINER_8
-	dwEventFlagAddress EVENT_BEAT_MT_MOON_1_TRAINER_8
+	dbEventFlagBit EVENT_BEAT_BROCK_ON_MT__MOON
+	dwEventFlagAddress EVENT_BEAT_BROCK_ON_MT__MOON
 	dw MtMoon1BattleText9 ; TextBeforeBattle
 	dw MtMoon1AfterBattleText9 ; TextAfterBattle
-	dw MtMoon1EarnFossilText ; TextEarnFossil
-	dw MtMoon1TooManyItemsText ; TextTooManyItems
+	dw ReceivedFossilText ; TextEarnFossil
+	dw FossilNoRoomText ; TextTooManyItems
 	dw MtMoon1EndBattleText9 ; TextEndBattle
 	dw MtMoon1EndBattleText9 ; TextEndBattle
 
@@ -139,10 +139,10 @@ MtMoon1BrockBattleText: ; 1967c (6:567c)
 	CheckEvent EVENT_GOT_DOME_FOSSIL
 	jr nz, .domeFossil
 	CheckEventReuseA EVENT_GOT_HELIX_FOSSIL
-	lb bc, DOME_FOSSIL
+	lb bc, DOME_FOSSIL, 1
 	jr .giveFossil
 .domeFossil
-	lb bc, HELIX_FOSSIL
+	lb bc, HELIX_FOSSIL, 1
 .giveFossil
 	call GiveItem
 	jr c, .Success
@@ -327,7 +327,7 @@ MtMoon1AfterBattleText9: ; 49afc (12:5afc)
 	TX_FAR _MtMoon1AfterBattleText9
 	db "@"
 
-ReceivedTM28Text: ; 196de (6:56de)
+ReceivedFossilText: ; 196de (6:56de)
 	TX_FAR _ReceivedFossilText
 	db $0B
 	TX_FAR _ReceivedFossilText2
