@@ -5521,7 +5521,6 @@ LeafFishingTilesSide:  INCBIN "gfx/leaf_fishing_tile_side.2bpp"
 
 SECTION "bankE",ROMX,BANK[$E]
 
-INCLUDE "data/moves.asm"
 BaseStats: INCLUDE "data/base_stats.asm"
 INCLUDE "data/cries.asm"
 INCLUDE "engine/battle/unused_stats_functions.asm"
@@ -5539,7 +5538,6 @@ TradingAnimationGraphics2:
 	INCBIN "gfx/trade2.2bpp"
 TradingAnimationGraphics2End:
 
-INCLUDE "engine/evos_moves.asm"
 INCLUDE "engine/battle/moveEffects/heal_effect.asm"
 INCLUDE "engine/battle/moveEffects/transform_effect.asm"
 INCLUDE "engine/battle/moveEffects/reflect_light_screen_effect.asm"
@@ -5556,6 +5554,8 @@ INCLUDE "engine/menu/pokedex.asm"
 INCLUDE "engine/trade.asm"
 INCLUDE "engine/intro.asm"
 INCLUDE "engine/trade2.asm"
+INCLUDE "engine/evos_moves.asm"
+INCLUDE "data/moves.asm"
 
 
 SECTION "bank11",ROMX,BANK[$11]
