@@ -5521,23 +5521,14 @@ LeafFishingTilesSide:  INCBIN "gfx/leaf_fishing_tile_side.2bpp"
 
 SECTION "bankE",ROMX,BANK[$E]
 
-BaseStats: INCLUDE "data/base_stats.asm"
+INCLUDE "data/moves.asm"
 INCLUDE "data/cries.asm"
 INCLUDE "engine/battle/unused_stats_functions.asm"
 INCLUDE "engine/battle/scroll_draw_trainer_pic.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
 INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
 
-TradingAnimationGraphics:
-	INCBIN "gfx/game_boy.norepeat.2bpp"
-	INCBIN "gfx/link_cable.2bpp"
-TradingAnimationGraphicsEnd:
-
-TradingAnimationGraphics2:
-; Pokeball traveling through the link cable.
-	INCBIN "gfx/trade2.2bpp"
-TradingAnimationGraphics2End:
-
+INCLUDE "engine/evos_moves.asm"
 INCLUDE "engine/battle/moveEffects/heal_effect.asm"
 INCLUDE "engine/battle/moveEffects/transform_effect.asm"
 INCLUDE "engine/battle/moveEffects/reflect_light_screen_effect.asm"
@@ -5550,12 +5541,21 @@ INCLUDE "engine/battle/core.asm"
 
 SECTION "bank10",ROMX,BANK[$10]
 
+TradingAnimationGraphics:
+	INCBIN "gfx/game_boy.norepeat.2bpp"
+	INCBIN "gfx/link_cable.2bpp"
+TradingAnimationGraphicsEnd:
+
+TradingAnimationGraphics2:
+; Pokeball traveling through the link cable.
+	INCBIN "gfx/trade2.2bpp"
+TradingAnimationGraphics2End:
+
+BaseStats: INCLUDE "data/base_stats.asm"
 INCLUDE "engine/menu/pokedex.asm"
 INCLUDE "engine/trade.asm"
 INCLUDE "engine/intro.asm"
 INCLUDE "engine/trade2.asm"
-INCLUDE "engine/evos_moves.asm"
-INCLUDE "data/moves.asm"
 
 
 SECTION "bank11",ROMX,BANK[$11]
