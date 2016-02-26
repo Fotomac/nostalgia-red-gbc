@@ -16,7 +16,7 @@ dw CharizardPicBack
 db SCRATCH
 db GROWL
 db EMBER
-db LEER
+db METAL_CLAW
 db 3 ; growth rate
 ; learnset
 	tmlearn 1,3,5,6,8
