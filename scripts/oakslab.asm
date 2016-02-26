@@ -1206,7 +1206,6 @@ OaksLabText25: ; 1d3eb (7:53eb)
 
 OaksLabText26:
 	TX_FAR _OaksLabText26
-	db "@"
 	db $11 ; play received item sound
 	db $08 ; asm
 	lb bc, POKE_BALL,5
