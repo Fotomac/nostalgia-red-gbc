@@ -2848,10 +2848,9 @@ wRoute18GateCurScript:: ; d669
 wCeruleanPokecenterCurScript::
 	ds 1
 
-	ds 78
 wGameProgressFlagsEnd::
 
-	ds 56
+	ds 114
 
 wObtainedHiddenItemsFlags::
 	ds 14
