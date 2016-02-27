@@ -691,7 +691,7 @@ SwitchEnemyMon: ; 3a74b (e:674b)
 	ld bc,4
 	call CopyData
 
-	ld hl, SpecialTrainerIDs
+	ld hl, SpecialTrainerIDs3
 	ld a, [wTrainerClass]
 	ld de, 1
 	call IsInArray
