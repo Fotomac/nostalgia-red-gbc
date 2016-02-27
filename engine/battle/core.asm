@@ -1017,7 +1017,7 @@ TrainerBattleVictory: ; 3c696 (f:4696)
 	cp LINK_STATE_BATTLING
 	ld a, b
 	call nz, PlayBattleVictoryMusic
-	ld hl, SpecialTrainerIDs
+	ld hl, SpecialTrainerIDs2
 	ld a, [wTrainerClass]
 	ld de, 1
 	call IsInArray
@@ -1473,7 +1473,7 @@ EnemySendOutFirstMon: ; 3c92a (f:492a)
 	ld a,[wOptions]
 	bit 6,a
 	jr nz,.next4
-	ld hl, SpecialTrainerIDs
+	ld hl, SpecialTrainerIDs2
 	ld a, [wTrainerClass]
 	ld de, 1
 	call IsInArray
@@ -1525,7 +1525,7 @@ EnemySendOutFirstMon: ; 3c92a (f:492a)
 	ld b, SET_PAL_BATTLE
 	call RunPaletteCommand
 	call GBPalNormal
-	ld hl, SpecialTrainerIDs
+	ld hl, SpecialTrainerIDs2
 	ld a, [wTrainerClass]
 	ld de, 1
 	call IsInArray
@@ -8784,21 +8784,4 @@ PlayDefeatedWildMonMusic:
   ld a, MUSIC_DEFEATED_WILD_MON
   jp PlayBattleVictoryMusic
 
-SpecialTrainerIDs:
-	db SONY1
-	db GIOVANNI
-	db ROCKET
-	db BRUNO
-	db BROCK
-	db MISTY
-	db LT__SURGE
-	db ERIKA
-	db KOGA
-	db BLAINE
-	db SABRINA
-	db SONY2
-	db SONY3
-	db LORELEI
-	db AGATHA
-	db LANCE
-	db "@"
+INCLUDE "data/special_trainers.asm"
