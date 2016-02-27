@@ -843,7 +843,7 @@ AIPrintItemUse_: ; 3a835 (e:6835)
 	ld a,[wAIItem]
 	ld [wd11e],a
 	call GetItemName
-	ld hl, SpecialTrainerIDs
+	ld hl, SpecialTrainerIDs3
 	ld a, [wTrainerClass]
 	ld de, 1
 	call IsInArray
@@ -862,3 +862,5 @@ AIBattleUseItemText: ; 3a844 (e:6844)
 AIBattleUseItemText2:
 	TX_FAR _AIBattleUseItemText2
 	db "@"
+
+INCLUDE "data/special_trainers.asm"
