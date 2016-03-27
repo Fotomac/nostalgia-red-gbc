@@ -58,6 +58,11 @@ TeamMoves:
 	db 2,4,BUBBLEBEAM
 	db 0
 
+	db MISTY,$2
+	db 2,4,IRON_TAIL
+	db 5,4,BUBBLEBEAM
+	db 0
+
 	db LT__SURGE,$1
 	db 1,1,THUNDERBOLT
 	db 1,2,MEGA_PUNCH

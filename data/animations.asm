@@ -165,6 +165,7 @@ AttackAnimationPointers: ; 7a07d (1e:607d)
 	dw SubstituteAnim
 	dw MetalClawAnim
 	dw IronTailAnim
+	dw ScaldAnim
 	dw StruggleAnim
 	dw ShowPicAnim
 	dw EnemyFlashAnim
@@ -1141,6 +1142,11 @@ IronTailAnim:
 	db SE_MOVE_MON_HORIZONTALLY, $84
 	db SE_DELAY_ANIMATION_10, $FF
 	db SE_RESET_MON_POSITION, $84
+	db $FF
+
+ScaldAnim: ; 7a386 (1e:6386)
+	db SE_DARK_SCREEN_FLASH, $0E
+	db $06,$37,$1A
 	db $FF
 
 BallTossAnim: ; 7a6d9 (1e:66d9)

@@ -878,11 +878,13 @@ Mon056_EvosMoves: ; 3b4a4 (e:74a4)
 	db EV_LEVEL,28,PRIMEAPE
 	db 0
 ;Learnset
+	db 9,LOW_KICK
 	db 15,KARATE_CHOP
 	db 21,FURY_SWIPES
 	db 27,FOCUS_ENERGY
 	db 33,SEISMIC_TOSS
 	db 39,THRASH
+	db 45,SCREECH
 	db 0
 
 Mon086_EvosMoves: ; 3b4b3 (e:74b3)
@@ -1154,11 +1156,15 @@ Mon025_EvosMoves: ; 3b592 (e:7592)
 	db EV_ITEM,THUNDER_STONE,1,RAICHU
 	db 0
 ;Learnset
-	db 9,THUNDER_WAVE
-	db 16,QUICK_ATTACK
-	db 26,SWIFT
-	db 33,AGILITY
-	db 43,THUNDER
+	db 6,TAIL_WHIP
+	db 8,THUNDER_WAVE
+	db 11,QUICK_ATTACK
+	db 15,DOUBLE_TEAM
+	db 20,SWIFT
+	db 25,THUNDERBOLT
+	db 31,AGILITY
+	db 38,THUNDER
+	db 46,LIGHT_SCREEN
 	db 0
 
 Mon026_EvosMoves: ; 3b5a2 (e:75a2)
@@ -1166,11 +1172,15 @@ Mon026_EvosMoves: ; 3b5a2 (e:75a2)
 ;Evolutions
 	db 0
 ;Learnset
-	db 9,THUNDER_WAVE
-	db 16,QUICK_ATTACK
-	db 26,SWIFT
-	db 33,AGILITY
-	db 43,THUNDER
+	db 6,TAIL_WHIP
+	db 8,THUNDER_WAVE
+	db 11,QUICK_ATTACK
+	db 15,DOUBLE_TEAM
+	db 20,SWIFT
+	db 25,THUNDERBOLT
+	db 31,AGILITY
+	db 38,THUNDER
+	db 46,LIGHT_SCREEN
 	db 0
 
 Mon166_EvosMoves: ; 3b5a4 (e:75a4)
@@ -1343,6 +1353,13 @@ Mon040_EvosMoves: ; 3b642 (e:7642)
 ;Evolutions
 	db 0
 ;Learnset
+	db 9,POUND
+	db 14,DISABLE
+	db 19,DEFENSE_CURL
+	db 24,DOUBLESLAP
+	db 29,REST
+	db 34,BODY_SLAM
+	db 39,DOUBLE_EDGE
 	db 0
 
 Mon133_EvosMoves: ; 3b644 (e:7644)
@@ -1534,10 +1551,13 @@ Mon057_EvosMoves: ; 3b70c (e:770c)
 ;Evolutions
 	db 0
 ;Learnset
+	db 9,LOW_KICK
 	db 15,KARATE_CHOP
 	db 21,FURY_SWIPES
 	db 27,FOCUS_ENERGY
+	db 28,RAGE
 	db 37,SEISMIC_TOSS
+	db 45,SCREECH
 	db 46,THRASH
 	db 0
 
