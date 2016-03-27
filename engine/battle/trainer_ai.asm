@@ -691,10 +691,7 @@ SwitchEnemyMon: ; 3a74b (e:674b)
 	ld bc,4
 	call CopyData
 
-	ld hl, SpecialTrainerIDs3
-	ld a, [wTrainerClass]
-	ld de, 1
-	call IsInArray
+	call IsTrainerSpecial
 	jr c, .specialTrainer
 	ld hl, AIBattleWithdrawText
 	jr .next2
@@ -843,10 +840,7 @@ AIPrintItemUse_: ; 3a835 (e:6835)
 	ld a,[wAIItem]
 	ld [wd11e],a
 	call GetItemName
-	ld hl, SpecialTrainerIDs3
-	ld a, [wTrainerClass]
-	ld de, 1
-	call IsInArray
+	call IsTrainerSpecial
 	jr c, .specialTrainer2
 	ld hl, AIBattleUseItemText
 	jr .next3
@@ -862,5 +856,3 @@ AIBattleUseItemText: ; 3a844 (e:6844)
 AIBattleUseItemText2:
 	TX_FAR _AIBattleUseItemText2
 	db "@"
-
-INCLUDE "data/special_trainers.asm"

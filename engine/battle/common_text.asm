@@ -21,10 +21,7 @@ PrintBeginningBattleText: ; 58d99 (16:4d99)
 	call .playSFX
 	ld c, 20
 	call DelayFrames
-	ld hl, SpecialTrainerIDs
-	ld a, [wTrainerClass]
-	ld de, 1
-	call IsInArray
+	call IsTrainerSpecial
 	jr c, .specialTrainer
 	ld hl, TrainerWantsToFightText
 .specialTrainer
@@ -252,5 +249,3 @@ PrintComeBackText: ; 58f3a (16:4f3a)
 ComeBackText: ; 58f3e (16:4f3e)
 	TX_FAR _ComeBackText
 	db "@"
-
-INCLUDE "data/special_trainers.asm"

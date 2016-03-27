@@ -2532,6 +2532,7 @@ MoveSoundTable: ; 798bc (1e:58bc)
 	db SFX_BATTLE_2C,         $d8,$04 ; SUBSTITUTE
 	db SFX_NOT_VERY_EFFECTIVE,$00,$ff ; METAL_CLAW
 	db SFX_BATTLE_21,         $01,$80 ; IRON_TAIL
+	db SFX_BATTLE_2A,         $00,$60 ; SCALD
 	db SFX_BATTLE_0B,         $00,$80 ; STRUGGLE
 	db SFX_BATTLE_0B,         $00,$80
 

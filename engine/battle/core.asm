@@ -1017,10 +1017,7 @@ TrainerBattleVictory: ; 3c696 (f:4696)
 	cp LINK_STATE_BATTLING
 	ld a, b
 	call nz, PlayBattleVictoryMusic
-	ld hl, SpecialTrainerIDs2
-	ld a, [wTrainerClass]
-	ld de, 1
-	call IsInArray
+	call IsTrainerSpecial
 	jr c, .specialTrainer1
 	ld hl, TrainerDefeatedText
 	jr .next12
@@ -1473,10 +1470,7 @@ EnemySendOutFirstMon: ; 3c92a (f:492a)
 	ld a,[wOptions]
 	bit 6,a
 	jr nz,.next4
-	ld hl, SpecialTrainerIDs2
-	ld a, [wTrainerClass]
-	ld de, 1
-	call IsInArray
+	call IsTrainerSpecial
 	jr c, .specialTrainer2
 	ld hl, TrainerAboutToUseText
 	jr .next11
@@ -1525,10 +1519,7 @@ EnemySendOutFirstMon: ; 3c92a (f:492a)
 	ld b, SET_PAL_BATTLE
 	call RunPaletteCommand
 	call GBPalNormal
-	ld hl, SpecialTrainerIDs2
-	ld a, [wTrainerClass]
-	ld de, 1
-	call IsInArray
+	call IsTrainerSpecial
 	jr c, .specialTrainer3
 	ld hl,TrainerSentOutText
 	jr .next10
@@ -7344,7 +7335,7 @@ PoisonEffect: ; 3f24f (f:724f)
 	jr z, .versusPoison
 	ld a, [hld]
 	cp POISON ; can't posion a poison-type target
-	jr z, .versusPoison
+	jr z, .noEffect
 	ld a, [de]
 	cp POISON_SIDE_EFFECT1
 	ld b, $34 ; ~20% chance of poisoning
@@ -8783,5 +8774,3 @@ PlayDefeatedWildMonMusic:
   call EndLowHealthAlarm
   ld a, MUSIC_DEFEATED_WILD_MON
   jp PlayBattleVictoryMusic
-
-INCLUDE "data/special_trainers.asm"
