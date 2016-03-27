@@ -138,9 +138,9 @@ _ViridianForestText11:: ; 80584 (20:4584)
 _ViridianForestText12:: ; 805c6 (20:45c6)
 	text "TRAINER TIPS"
 
-	para "No stealing of"
-	line "#MON from"
-	cont "other trainers!"
+	para "A trainer's"
+	line "#MON is"
+	cont "his/her own!"
 	cont "Catch only wild"
 	cont "#MON!"
 	done

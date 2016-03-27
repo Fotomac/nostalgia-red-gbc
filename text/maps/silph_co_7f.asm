@@ -143,7 +143,7 @@ _SilphCo7EndBattleText4:: ; 84852 (21:4852)
 	prompt
 
 _SilphCo7AfterBattleText4:: ; 84861 (21:4861)
-	text "Go on home"
+	text "Now go on home"
 	line "before my BOSS"
 	cont "gets ticked off!"
 	done
@@ -181,12 +181,15 @@ ENDC
 	prompt
 
 _SilphCo7Text_51ecd:: ; 84975 (21:4975)
-	text $53, ": How can"
-	line "I put this?"
+	text $53, ": Hey,"
+	line "you're still"
+	cont "lagging behind me"
+	cont "skillwise!"
 
-	para "You're not good"
-	line "enough to play"
-	cont "with us big boys!"
+	para "And you thought"
+	line "you were close"
+	cont "to my level of"
+	cont "maturity..."
 	prompt
 
 _SilphCo7Text_51ed2:: ; 849bd (21:49bd)

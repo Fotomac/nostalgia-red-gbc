@@ -26,9 +26,10 @@ _PewterCityText_193f1:: ; a4a56 (29:4a56)
 	done
 
 _PewterCityText_193f6:: ; a4a75 (29:4a75)
-	text "Weren't those"
-	line "fossils from MT."
-	cont "MOON amazing?"
+	text "I myself thought"
+	line "those fossils"
+	cont "from MT. MOON"
+	cont "were amazing!"
 	done
 
 _PewterCityText_193fb:: ; a4aa2 (29:4aa2)
@@ -46,9 +47,10 @@ _PewterCityText13:: ; a4ac6 (29:4ac6)
 	done
 
 _PewterCityText_19427:: ; a4b14 (29:4b14)
-	text "Psssst!"
-	line "Do you know what"
-	cont "I'm doing?"
+	text "[sprays flowerbed]"
+
+	para "Do you know what"
+	line "I'm doing?"
 	done
 
 _PewterCityText_1942c:: ; a4b38 (29:4b38)

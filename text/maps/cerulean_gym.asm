@@ -1,35 +1,26 @@
 _CeruleanGymText_5c7be:: ; 989c1 (26:49c1)
-	text "Hi, you're a new"
-	line "face!"
-
-IF DEF(_YELLOW)
-	para "What's your policy"
-	line "on #MON? What"
-	cont "is your approach?"
-ELSE
-	para "Trainers who want"
-	line "to turn pro have"
-	cont "to have a policy"
-	cont "about #MON!"
+	text "Hey, you! Trainers"
+	line "who want to turn"
+	cont "pro have to have"
+	cont "a policy about"
+	cont "#MON!"
 
 	para "What is your"
 	line "approach when you"
 	cont "catch #MON?"
-ENDC
 
 	para "My policy is an"
 	line "all-out offensive"
 	cont "with water-type"
 	cont "#MON!"
 
-IF DEF(_YELLOW)
-	para "MISTY, the world-"
-	line "famous beauty, is"
+	para "I, MISTY, the"
+	line "world-famous"
+	cont "beauty, shall be"
 	cont "your host!"
 
 	para "Are you ready,"
 	line "sweetie?"
-ENDC
 	done
 
 _CeruleanGymText_5c7c3:: ; 98a7b (26:4a7b)
@@ -101,10 +92,11 @@ _CeruleanGymEndBattleText1:: ; 98c38 (26:4c38)
 	prompt
 
 _CeruleanGymAfterBattleText1:: ; 98c4d (26:4c4d)
-	text "You have to face"
-	line "other trainers to"
-	cont "find out how good"
-	cont "you really are."
+	text "Unless you face"
+	line "other trainers,"
+	cont "you won't know"
+	cont "how strong you"
+	cont "can be."
 	done
 
 _CeruleanGymBattleText2:: ; 98c93 (26:4c93)
@@ -154,7 +146,7 @@ IF DEF(_YELLOW)
 ELSE
 	para "You and me kid,"
 ENDC
-	line "we make a pretty"
-	cont "darn good team!"
+	line "we're both quite"
+	cont "amazing, right?"
 	done
 

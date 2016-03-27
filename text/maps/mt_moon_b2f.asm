@@ -61,14 +61,16 @@ _MtMoon3Text_49f8f:: ; 80a11 (20:4a11)
 	done
 
 _MtMoon3Text_49f94:: ; 80a37 (20:4a37)
-	text "Far away, on"
-	line "CINNABAR ISLAND,"
+	text "It's quite far"
+	line "from here, but on"
+	cont "CINNABAR ISLAND,"
 	cont "there's a #MON"
 	cont "LAB."
 
 	para "They do research"
 	line "on regenerating"
-	cont "fossils."
+	cont "fossils, so I"
+	cont "heard."
 	done
 
 _MtMoon3Text_49f99:: ; 80a93 (20:4a93)
@@ -76,10 +78,12 @@ _MtMoon3Text_49f99:: ; 80a93 (20:4a93)
 	line "this is mine!@@"
 
 _MtMoon3BattleText2:: ; 80ab3 (20:4ab3)
-	text "TEAM ROCKET will"
-	line "find the fossils,"
-	cont "revive and sell"
-	cont "them for cash!"
+	text "These fossils are"
+	line "TEAM ROCKET's!"
+	cont "If we were to"
+	cont "revive them, we"
+	cont "could sell them"
+	cont "for cash!"
 	done
 
 _MtMoon3EndBattleText2:: ; 80af6 (20:4af6)
@@ -109,9 +113,9 @@ _MtMoon3EndBattleText3:: ; 80b61 (20:4b61)
 	prompt
 
 _MtMoon3AfterBattleText3:: ; 80b6d (20:4b6d)
-	text "Darn it all! My"
-	line "associates won't"
-	cont "stand for this!"
+	text "Damn! My comrades"
+	line "won't keep quiet"
+	cont "about this!"
 	done
 
 _MtMoon3BattleText4:: ; 80b9e (20:4b9e)
@@ -127,14 +131,17 @@ _MtMoon3EndBattleText4:: ; 80bcb (20:4bcb)
 
 _MtMoon3AfterBattleText4:: ; 80bde (20:4bde)
 	text "If you find a"
-	line "fossil, give it"
-	cont "to me and scram!"
+	line "fossil, tell me"
+	cont "where it is and"
+	cont "scram!"
 	done
 
 _MtMoon3BattleText5:: ; 80c0e (20:4c0e)
-	text "Little kids"
-	line "should leave"
-	cont "grown-ups alone!"
+	text "Oi! 'Tis dangerous"
+	line "fer liddle kids"
+	cont "ta stick der"
+	cont "noses in grown-u'"
+	cont "business!"
 	done
 
 _MtMoon3EndBattleText5:: ; 80c39 (20:4c39)
@@ -143,7 +150,8 @@ _MtMoon3EndBattleText5:: ; 80c39 (20:4c39)
 	prompt
 
 _MtMoon3AfterBattleText5:: ; 80c46 (20:4c46)
-	text "#MON lived"
-	line "here long before"
-	cont "people came."
+	text "'Twould appear"
+	line "#MON lived"
+	cont "'ere long 'fore"
+	cont "mankin' existed."
 	done

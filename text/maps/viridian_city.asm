@@ -23,9 +23,9 @@ _ViridianCityText_19127:: ; a4474 (29:4474)
 	done
 
 _ViridianCityText_1914d:: ; a4494 (29:4494)
-	text "You want to know"
-	line "about the 2 kinds"
-	cont "of caterpillar"
+	text "You know about"
+	line "the 2 kinds of"
+	cont "caterpillar"
 	cont "#MON?"
 	done
 
@@ -51,8 +51,9 @@ ENDC
 	line "Grandpa!"
 	cont "Sleeping here of"
 	cont "all places!"
-	cont "It can't be"
-	cont "helped..."
+
+	para "It can't be"
+	line "helped..."
 	cont "We have to wait"
 	cont "until he sobers"
 	cont "up..."

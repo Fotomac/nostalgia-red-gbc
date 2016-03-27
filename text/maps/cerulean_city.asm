@@ -2,8 +2,9 @@ _CeruleanCityText_19668:: ; a4d2b (29:4d2b)
 	text $53, ": Yo!"
 	line $52, "!"
 
-	para "You're still"
-	line "struggling along"
+	para "What are you"
+	line "still doing"
+	cont "struggling along"
 	cont "back here?"
 
 	para "I'm doing great!"
@@ -11,21 +12,23 @@ _CeruleanCityText_19668:: ; a4d2b (29:4d2b)
 	cont "of strong and"
 	cont "smart #MON!"
 
-	para "Here, let me see"
-	line "what you caught,"
-	cont $52, "!"
+	para $52, ", what about"
+	line "you? Show me what"
+	cont "you've got!"
 	done
 
 _CeruleanCityText_1966d:: ; a4dbe (29:4dbe)
-	text "Hey!"
-	line "Take it easy!"
-	cont "You won already!"
+	text "WHAT!"
+	line "You're getting"
+	cont "all worked up!"
+	cont "I got it, OK?"
 	prompt
 
 _CeruleanCityText_19672:: ; a4de3 (29:4de3)
-	text "Heh!"
-	line "You're no match"
-	cont "for my genius!"
+	text "Man...!"
+	line "At your rate, you"
+	cont "can't compare to"
+	cont "my genius!"
 	prompt
 
 _CeruleanCityText_19677:: ; a4e07 (29:4e07)
@@ -33,16 +36,16 @@ _CeruleanCityText_19677:: ; a4e07 (29:4e07)
 	line "guess what?"
 
 	para "I went to BILL's"
-	line "and got him to"
-	cont "show me his rare"
-	cont "#MON!"
+	line "and got to see"
+	cont "a whole bunch of"
+	cont "rare #MON!"
 
 	para "That added a lot"
 	line "of pages to my"
 	cont "#DEX!"
 
 	para "After all, BILL's"
-	line "world famous as a"
+	line "a world-famous"
 	cont "#MANIAC!"
 
 	para "He invented the"
@@ -50,8 +53,9 @@ _CeruleanCityText_19677:: ; a4e07 (29:4e07)
 	cont "System on PC!"
 
 	para "Since you're using"
-	line "his system, go"
-	cont "thank him!"
+	line "his system, I'd"
+	cont "say it's polite"
+	cont "to thank him!"
 
 	para "Well, I better"
 	line "get rolling!"
@@ -104,9 +108,11 @@ _CeruleanCityText3:: ; a5030 (29:5030)
 	done
 
 _CeruleanCityText4:: ; a506e (29:506e)
-	text "That bush in"
-	line "front of the shop"
-	cont "is in the way."
+	text "That's a nice"
+	line "garden in front"
+	cont "of the shop, but"
+	cont "you can't get"
+	cont "past that plant."
 
 	para "There might be a"
 	line "way around."
@@ -120,7 +126,6 @@ _CeruleanCityText5:: ; a50ba (29:50ba)
 	done
 
 _CeruleanCityText6:: ; a50f6 (29:50f6)
-IF DEF(_YELLOW)
 	text "These poor people"
 	line "here were robbed."
 
@@ -128,22 +133,9 @@ IF DEF(_YELLOW)
 	line "that TEAM ROCKET"
 	cont "is behind this"
 	cont "terrible deed."
-ELSE
-	text "The people here"
-	line "were robbed."
-
-	para "It's obvious that"
-	line "TEAM ROCKET is"
-	cont "behind this most"
-	cont "heinous crime!"
-ENDC
 
 	para "Even our POLICE"
-IF DEF(_YELLOW)
-	line "FORCE has trouble"
-ELSE
 	line "force has trouble"
-ENDC
 	cont "with the ROCKETs!"
 	done
 
@@ -235,7 +227,8 @@ _CeruleanCityText9:: ; a52d6 (29:52d6)
 	line "red BICYCLE!"
 
 	para "I'll keep it at"
-	line "home, so it won't"
+	line "home, since I"
+	cont "don't want it to"
 	cont "get dirty!"
 	done
 

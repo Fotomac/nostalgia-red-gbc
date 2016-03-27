@@ -44,7 +44,9 @@ ELSE
 ENDC
 
 _BluesHouseText3::
-	text "It's a big map!"
-	line "This is useful!"
+	text "It's a map of"
+	line "KANTO! But would"
+	cont "it be right to"
+	cont "just take it?"
 	done
 

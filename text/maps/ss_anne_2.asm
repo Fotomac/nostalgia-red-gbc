@@ -40,11 +40,12 @@ _SSAnneRivalDefeatedText:: ; 80e57 (20:4e57)
 	prompt
 
 _SSAnneRivalWonText:: ; 80e81 (20:4e81)
-	text $52, "! What are"
-	line "you, seasick?"
+	text $52, "! You"
+	line "seasick?"
 
-	para "You should shape"
-	line "up, pal!"
+	para "I suggest you"
+	line "get back in"
+	cont "shape, pal!"
 	prompt
 
 _SSAnneRivalCaptainText:: ; 80eb6 (20:4eb6)

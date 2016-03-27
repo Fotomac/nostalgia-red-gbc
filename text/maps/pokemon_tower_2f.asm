@@ -19,12 +19,12 @@ _PokemonTower2Text_60632:: ; 995e5 (26:55e5)
 	prompt
 
 _PokemonTower2Text_60637:: ; 99614 (26:5614)
-	text $53, ": Well,"
-	line "look at all your"
-	cont "wimpy #MON!"
+	text $53, ": AAAH!"
+	line "Your #MON were"
+	cont "too weak!"
 
-	para "Toughen them up a"
-	line "bit more!"
+	para "Take this more"
+	line "seriously!"
 	prompt
 
 _PokemonTower2Text_6063c:: ; 99657 (26:5657)

@@ -3,14 +3,15 @@ _CeruleanMartText2:: ; 99012 (26:5012)
 	line "bugs and weak"
 	cont "#MON away."
 
-	para "Put your strongest"
-	line "#MON at the"
-	cont "top of the list"
-	cont "for best results!"
+	para "If your strongest"
+	line "#MON is at the"
+	cont "top of the list,"
+	cont "you'll get"
+	cont "better results!"
 	done
 
 _CeruleanMartText3:: ; 9907f (26:507f)
-	text "Have you seen any"
+	text "Do you know about"
 	line "RARE CANDY?"
 
 	para "It's supposed to"

@@ -17,12 +17,12 @@ IF DEF(_YELLOW)
 	cont "#MON than you!"
 	done
 ELSE
-	text $53,": Heh, I"
-	line "don't need to be"
+	text $53,": Heh, I'm"
+	line "too mature to be"
 	cont "greedy like you!"
 
-	para "Go ahead and"
-	line "choose, ", $52, "!"
+	para "So, after you,"
+	line $52, "!"
 	done
 ENDC
 
@@ -249,12 +249,14 @@ ELSE
 
 	para "When I was young,"
 	line "I was a serious"
+	cont "and active"
 	cont "#MON trainer!"
 
-	para "In my old age, I"
-	line "have only 3 left,"
-	cont "but you can have"
-	cont "one! Choose!"
+	para "Nowadays, in my"
+	line "old age, I have"
+	cont "only 3 left, but"
+	cont "you can have one!"
+	cont "Choose!"
 	done
 ENDC
 
@@ -348,12 +350,15 @@ _OaksLabRivalReceivedMonText:: ; 95461 (25:5461)
 
 _OaksLabRivalChallengeText:: ; 95477 (25:5477)
 	text $53, ": Wait"
-	line $52, "!"
-	cont "Let's check out"
-	cont "our #MON!"
+	line $52, "! We did"
+	cont "receive new"
+	cont "#MON from"
+	cont "dear old Gramps,"
+	cont "didn't we?"
 
-	para "Come on, I'll take"
-	line "you on!"
+	para "Give me a minute,"
+	line "and I'll show you"
+	cont "how to fight!"
 	done
 
 _OaksLabText_1d3be:: ; 954b6 (25:54b6)
@@ -369,10 +374,10 @@ _OaksLabText_1d3c3:: ; 954e4 (25:54e4)
 	prompt
 
 _OaksLabRivalToughenUpText:: ; 95502 (25:5502)
-	text $53, ": Okay!"
-	line "I'll make my"
-	cont "#MON fight to"
-	cont "toughen it up!"
+	text $53, ": I get it!"
+	line "If my #MON"
+	cont "fights others,"
+	cont "it'll toughen up!"
 
 	para $52, "! Gramps!"
 	line "Smell you later!"
@@ -416,8 +421,11 @@ IF DEF(_YELLOW)
 	cont "Check it out!"
 	done
 ELSE
-	text $53, ": What did"
-	line "you call me for?"
+	text $53, ": I can't"
+	line "believe I forgot!"
+	cont "Sorry! What did"
+	cont "you want me to do"
+	cont "again?"
 	done
 ENDC
 
@@ -504,15 +512,15 @@ ENDC
 	para "But, I'm too old!"
 	line "I can't do it!"
 
-	para "So, I want you two"
-	line "to fulfill my"
-	cont "dream for me!"
+	para "So, I'm charging"
+	line "you two with"
+	cont "doing it instead!"
 
 	para "Get moving, you"
 	line "two!"
 
-	para "This is a great"
-	line "undertaking in"
+	para "This will leave an"
+	line "indelible mark on"
 	cont "#MON history!"
 	done
 
@@ -522,8 +530,9 @@ _OaksLabText28:: ; 95741 (25:5741)
 	cont "all to me!"
 
 	para $52, ", I hate to"
-	line "say it, but I"
-	cont "don't need you!"
+	line "say it, but you"
+	cont "shouldn't get"
+	cont "involved!"
 
 	para "I know! I'll"
 	line "borrow a TOWN MAP"
@@ -531,7 +540,12 @@ _OaksLabText28:: ; 95741 (25:5741)
 
 	para "I'll tell her not"
 	line "to lend you one,"
-	cont $52, "! Hahaha!"
+	cont $52, ", because"
+	cont "I believe this is"
+	cont "family business!"
+	cont "And you're not"
+	cont "part of our"
+	cont "family, right?"
 	done
 
 _OaksLabText_1d405:: ; 957eb (25:57eb)

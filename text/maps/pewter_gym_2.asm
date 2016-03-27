@@ -152,8 +152,8 @@ _PewterGymText_5c51f:: ; 983fc (26:43fc)
 	done
 
 _PewterGymText_5c524:: ; 98476 (26:4476)
-	text "It's a free"
-	line "service! Let's"
+	text "Come now, don't"
+	line "be shy! Let's"
 	cont "get happening!"
 	prompt
 

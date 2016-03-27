@@ -2,8 +2,8 @@ _BikeShopText_1d810:: ; 98e03 (26:4e03)
 	text "Hi! Welcome to"
 	line "our BIKE SHOP."
 
-	para "Have we got just"
-	line "the BIKE for you!"
+	para "Here's a real"
+	line "bargain!"
 	prompt
 
 _BikeShopText_1d815:: ; 98e45 (26:4e45)
@@ -60,12 +60,12 @@ _BikeShopText_1d843:: ; 98f6d (26:4f6d)
 
 _BikeShopText_1d85c:: ; 98fc1 (26:4fc1)
 	text "These BIKEs are"
-	line "cool, but they're"
+	line "good, but they're"
 	cont "way expensive!"
 	done
 
 _BikeShopText_1d861:: ; 98ff2 (26:4ff2)
 	text "Wow. Your BIKE is"
-	line "really cool!"
+	line "really good!"
 	done
 

@@ -7,30 +7,42 @@ _MtMoonPokecenterText1:: ; 8a8eb (22:68eb)
 	done
 
 _MtMoonPokecenterText3:: ; 8a929 (22:6929)
-	text "TEAM ROCKET"
-	line "attacks CERULEAN"
-	cont "citizens..."
+	text "Private residence"
+	line "burglarized in"
+	cont "CERULEAN CITY..."
 
 	para "TEAM ROCKET is"
 	line "always in the"
 	cont "news!"
 	done
 
-_MtMoonPokecenterText_4935c:: ; 8a976 (22:6976)
-	text "MAN: Hello, there!"
-	line "Have I got a deal"
-	cont "just for you!"
+_MtMoonPokecenterText_4935c_1:: ; 8a976 (22:6976)
+	text "MAN: Little boy,"
+	line "just for you,"
+	cont "here's something"
+	cont "irresistible!"
 
-	para "I'll let you have"
-	line "a swell MAGIKARP"
-	cont "for just ¥500!"
-	cont "What do you say?"
+	para "This rare MAGIKARP"
+	line "will be yours for"
+	cont "just ¥500!"
+	cont "Would you like it?"
+	done
+
+_MtMoonPokecenterText_4935c_2:: ; 8a976 (22:6976)
+	text "MAN: Little girl,"
+	line "just for you,"
+	cont "here's something"
+	cont "irresistible!"
+
+	para "This rare MAGIKARP"
+	line "will be yours for"
+	cont "just ¥500!"
+	cont "Would you like it?"
 	done
 
 _MtMoonPokecenterText_49361:: ; 8a9ec (22:69ec)
-	text "No? I'm only"
-	line "doing this as a"
-	cont "favor to you!"
+	text "Oh..."
+	line "What a pity."
 	done
 
 _MtMoonPokecenterText_49366:: ; 8aa17 (22:6a17)

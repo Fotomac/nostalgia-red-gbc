@@ -14,9 +14,9 @@ _CeruleanPokecenterText3:: ; 9892a (26:492a)
 	para "Everyone calls"
 	line "him a #MANIAC!"
 
-	para "I think people"
-	line "are just jealous"
-	cont "of BILL, though."
+	para "But then, they're"
+	line "all green with"
+	cont "envy."
 
 	para "Who wouldn't want"
 	line "to boast about"

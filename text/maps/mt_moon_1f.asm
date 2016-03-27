@@ -12,7 +12,8 @@ _MtMoon1EndBattleText2:: ; 806bf (20:46bf)
 _MtMoon1AfterBattleText2:: ; 806d4 (20:46d4)
 	text "Kids like you"
 	line "shouldn't be"
-	cont "here!"
+	cont "in dark places"
+	cont "like this!"
 	done
 
 _MtMoon1BattleText3:: ; 806f5 (20:46f5)
@@ -28,7 +29,9 @@ _MtMoon1EndBattleText3:: ; 80713 (20:4713)
 _MtMoon1AfterBattleText3:: ; 80723 (20:4723)
 	text "I came down here"
 	line "to show off to"
-	cont "girls."
+	cont "girls, but then"
+	cont "TEAM ROCKET"
+	cont "scared them away."
 	done
 
 _MtMoon1BattleText4:: ; 8074b (20:474b)
@@ -48,24 +51,26 @@ _MtMoon1AfterBattleText4:: ; 80788 (20:4788)
 	done
 
 _MtMoon1BattleText5:: ; 807a5 (20:47a5)
-	text "What! Don't sneak"
-	line "up on me!"
+	text "WHOA!"
+	line "What? Don't call"
+	cont "out so suddenly!"
 	done
 
 _MtMoon1EndBattleText5:: ; 807c1 (20:47c1)
-	text "My"
-	line "#MON won't do!"
+	text "These"
+	line "#MON won't do."
 	prompt
 
 _MtMoon1AfterBattleText5:: ; 807d3 (20:47d3)
-	text "I have to find"
-	line "stronger #MON."
+	text "Where can you find"
+	line "stronger #MON?"
 	done
 
 _MtMoon1BattleText6:: ; 807f2 (20:47f2)
 	text "What? I'm waiting"
-	line "for my friends to"
-	cont "find me here."
+	line "for my friends,"
+	cont "who got lost in"
+	cont "this cave."
 	done
 
 _MtMoon1EndBattleText6:: ; 80824 (20:4824)
@@ -74,7 +79,7 @@ _MtMoon1EndBattleText6:: ; 80824 (20:4824)
 
 _MtMoon1AfterBattleText6:: ; 8082d (20:482d)
 	text "I heard there are"
-	line "some very rare"
+	line "some amazing"
 	cont "fossils here."
 	done
 
@@ -108,8 +113,8 @@ _MtMoon1EndBattleText8:: ; 808f8 (20:48f8)
 
 _MtMoon1AfterBattleText8:: ; 80901 (20:4901)
 	text "ZUBAT is tough!"
-	line "But, it can be"
-	cont "useful if you"
+	line "But, you can rely"
+	cont "on it if you"
 	cont "catch one."
 	done
 

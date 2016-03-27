@@ -53,9 +53,11 @@ _Museum1FText_5c242:: ; 96675 (25:6675)
 	done
 
 _Museum1FText_5c251:: ; 96693 (25:6693)
-	text "That is one"
-	line "magnificent"
-	cont "fossil!"
+	text "Thanks be to"
+	line "the dragon god,"
+	cont "that I may stand"
+	cont "here to worship"
+	cont "its bones!"
 	done
 
 _Museum1FText_5c28e:: ; 966b4 (25:66b4)

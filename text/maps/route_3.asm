@@ -29,11 +29,17 @@ _Route3BattleText2:: ; 8d84c (23:584c)
 	text "Hi! I like shorts!"
 	line "They're comfy and"
 	cont "easy to wear!"
+
+	para "What about you?"
+	line "Don't you like"
+	cont "shorts?"
 	done
 
 _Route3EndBattleText2:: ; 8d87f (23:587f)
-	text "I don't"
-	line "believe it!"
+	text "And here"
+	line "I thought that"
+	cont "they'd look good"
+	cont "on you, too..."
 	prompt
 
 _Route3AfterBattleText2:: ; 8d893 (23:5893)
@@ -90,12 +96,14 @@ _Route3BattleText5:: ; 8d9a6 (23:59a6)
 	done
 
 _Route3EndBattleText5:: ; 8d9d1 (23:59d1)
-	text "Be nice!"
+	text "Can't you"
+	line "be nice to girls?"
 	prompt
 
 _Route3AfterBattleText5:: ; 8d9db (23:59db)
-	text "Avoid fights by"
-	line "not letting"
+	text "If you don't feel"
+	line "like fighting,"
+	cont "don't let other"
 	cont "people see you!"
 	done
 
@@ -134,8 +142,8 @@ _Route3AfterBattleText7:: ; 8da91 (23:5a91)
 	done
 
 _Route3BattleText8:: ; 8dac0 (23:5ac0)
-	text "Eek! Did you"
-	line "touch me?"
+	text "Eek! Did you touch"
+	line "me just now?"
 	done
 
 _Route3EndBattleText8:: ; 8dad8 (23:5ad8)

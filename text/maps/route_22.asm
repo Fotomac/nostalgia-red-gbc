@@ -9,8 +9,11 @@ _Route22RivalBeforeBattleText1:: ; 922cd (24:62cd)
 	line "probably don't"
 	cont "have any BADGEs!"
 
-	para "The guard won't"
-	line "let you through!"
+	para "The uniformed"
+	line "old gatekeepers"
+	cont "won't let you"
+	cont "through! Believe"
+	cont "me, I tried!"
 
 	para "By the way, did"
 	line "your #MON"
@@ -43,7 +46,7 @@ _Route22Text_511bc:: ; 92410 (24:6410)
 	cont "#MON?"
 
 	para "You should catch"
-	cont "some more too!"
+	cont "some, too!"
 	prompt
 
 _Route22RivalBeforeBattleText2:: ; 92450 (24:6450)
@@ -100,8 +103,9 @@ _Route22Text_511d0:: ; 925a0 (24:65a0)
 	cont "nowhere near as"
 	cont "good as me, pal!"
 
-	para "Go train some"
-	line "more! You loser!"
+	para "Come back when"
+	line "you're truly"
+	cont "ready! Hahaha!"
 	prompt
 
 _Route22FrontGateText:: ; 92606 (24:6606)

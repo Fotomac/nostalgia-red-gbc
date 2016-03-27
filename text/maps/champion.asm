@@ -51,7 +51,8 @@ _GaryText_760f9:: ; 8623b (21:623b)
 
 _GaryText_760fe:: ; 862b4 (21:62b4)
 	text "Hahaha!"
-	line "I won, I won!"
+	line "I won, I won,"
+	cont "I won!"
 
 	para "I'm too good for"
 	line "you, ", $52, "!"
@@ -61,8 +62,7 @@ _GaryText_760fe:: ; 862b4 (21:62b4)
 	cont $53, ", the"
 	cont "#MON genius!"
 
-	para "Nice try, loser!"
-	line "Hahaha!"
+	para "Nice try! Hahaha!"
 	prompt
 
 _GaryText_76103:: ; 8632f (21:632f)
