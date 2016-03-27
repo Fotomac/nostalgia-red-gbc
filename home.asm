@@ -4723,25 +4723,6 @@ TextPredefs::
 	add_tx_pre ElevatorText                         ; 41
 	add_tx_pre PokemonStuffText                     ; 42
 
-GoodCopyVideoData:
-	ld a,[rLCDC]
-	bit 7,a ; is the LCD enabled?
-	jp nz, CopyVideoData ; if LCD is on, transfer during V-blank
-	ld a, b
-	push hl
-	push de
-	ld h, 0
-	ld l, c
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	ld b, h
-	ld c, l
-	pop hl
-	pop de
-	jp FarCopyData2 ; if LCD is off, transfer all at once
-	
 SetCustomName:
 ; INPUTS: hl = pointer to name
 ; OUTPUTS: trainer name stored in wCurTrainerName, hl points to byte immediately after name
@@ -4753,3 +4734,28 @@ SetCustomName:
 	cp "@"
 	ret z
 	jr .loop
+
+IsTrainerSpecial::
+	ld hl, SpecialTrainerIDs
+	ld a, [wTrainerClass]
+	ld de, 1
+	jp IsInArray
+
+SpecialTrainerIDs:
+	db SONY1
+	db GIOVANNI
+	db ROCKET
+	db BRUNO
+	db BROCK
+	db MISTY
+	db LT__SURGE
+	db ERIKA
+	db KOGA
+	db BLAINE
+	db SABRINA
+	db SONY2
+	db SONY3
+	db LORELEI
+	db AGATHA
+	db LANCE
+	db $FF
