@@ -166,6 +166,7 @@ const_value = 1
 	const SUBSTITUTE   ; a4
 	const METAL_CLAW   ; a5
 	const IRON_TAIL    ; a6
+	const SCALD        ; a7
 
 NUM_ATTACKS EQU const_value + -1
 
