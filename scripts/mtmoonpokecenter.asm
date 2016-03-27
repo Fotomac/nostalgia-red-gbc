@@ -25,7 +25,15 @@ MtMoonPokecenterText4: ; 492ec (12:52ec)
 	TX_ASM
 	CheckEvent EVENT_BOUGHT_MAGIKARP, 1
 	jp c, .alreadyBoughtMagikarp
-	ld hl, MtMoonPokecenterText_4935c
+	ld a, [wPlayerGender]
+	bit 2, a
+	jr nz, .girl
+	ld hl, MtMoonPokecenterText_4935c_1
+	call PrintText
+	jr .next
+.girl
+	ld hl, MtMoonPokecenterText_4935c_2
+.next
 	call PrintText
 	ld a, MONEY_BOX
 	ld [wTextBoxID], a
@@ -70,8 +78,12 @@ MtMoonPokecenterText4: ; 492ec (12:52ec)
 .done
 	jp TextScriptEnd
 
-MtMoonPokecenterText_4935c: ; 4935c (12:535c)
-	TX_FAR _MtMoonPokecenterText_4935c
+MtMoonPokecenterText_4935c_1: ; 4935c (12:535c)
+	TX_FAR _MtMoonPokecenterText_4935c_1
+	db "@"
+
+MtMoonPokecenterText_4935c_2: ; 4935c (12:535c)
+	TX_FAR _MtMoonPokecenterText_4935c_2
 	db "@"
 
 MtMoonPokecenterText_49361: ; 49361 (12:5361)
