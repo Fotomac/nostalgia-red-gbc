@@ -11,7 +11,7 @@ TunnelMonsB2:
 		db 20,MACHOP
 		db 14,ONIX
 		db 18,ONIX
-		db 22,ONIX
+		db 22,DITTO
 	ELSE
 		db 16,ZUBAT
 		db 17,ZUBAT

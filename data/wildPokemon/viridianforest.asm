@@ -1,7 +1,7 @@
 ForestMons:
 	IF DEF(_YELLOW)
 		db $19
-		db 3,CATERPIE
+		db 4,KAKUNA
 		db 4,METAPOD
 		db 4,CATERPIE
 		db 5,CATERPIE

@@ -20,10 +20,10 @@ Route23Mons:
 			db 26,SANDSHREW
 		ENDC
 		db 33,DITTO
-		db 26,SPEAROW
+		db 26,MANKEY
 		db 38,FEAROW
 		db 38,DITTO
-		db 38,FEAROW
+		db 38,PRIMEAPE
 		IF DEF(_RED)
 			db 41,ARBOK
 		ENDC

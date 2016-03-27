@@ -18,7 +18,7 @@ Route3Mons:
 		db 6,SPEAROW
 		db 7,SPEAROW
 		db 8,PIDGEY
-		db 8,SPEAROW
+		db 8,MANKEY
 		db 3,JIGGLYPUFF
 		db 5,JIGGLYPUFF
 		db 7,JIGGLYPUFF

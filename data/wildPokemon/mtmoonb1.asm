@@ -12,8 +12,8 @@ MoonMonsB1:
 		db 12,SANDSHREW
 		db 11,CLEFAIRY
 	ELSE
-		db 8,ZUBAT
-		db 7,ZUBAT
+		db 8,PARAS
+		db 7,EKANS
 		db 7,GEODUDE
 		db 8,GEODUDE
 		db 9,ZUBAT
