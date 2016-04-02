@@ -179,11 +179,7 @@ _FossilNoRoomText::
 	line "room for this!"
 	done
 
-_MtMoon1Text14:: ; 8093a (20:493a)
+_MtMoon1Text14::
 	text "Beware! ZUBAT is"
-IF DEF(_YELLOW)
-	line "a bloodsucker!"
-ELSE
 	line "a blood sucker!"
-ENDC
 	done

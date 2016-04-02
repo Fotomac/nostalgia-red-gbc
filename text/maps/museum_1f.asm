@@ -60,7 +60,7 @@ _Museum1FText_5c251:: ; 96693 (25:6693)
 	cont "its bones!"
 	done
 
-_Museum1FText_5c28e:: ; 966b4 (25:66b4)
+_Museum1FText_5c28e::
 	text "Ssh! I think that"
 	line "this chunk of"
 	cont "AMBER contains"
@@ -74,11 +74,7 @@ _Museum1FText_5c28e:: ; 966b4 (25:66b4)
 	para "But, my colleagues"
 	line "just ignore me!"
 
-IF DEF(_YELLOW)
-	para "So, I have a favor"
-ELSE
 	para "So I have a favor"
-ENDC
 	line "to ask!"
 
 	para "Take this to a"
@@ -86,28 +82,28 @@ ENDC
 	cont "get it examined!"
 	prompt
 
-_ReceivedOldAmberText:: ; 96790 (25:6790)
+_ReceivedOldAmberText::
 	text $52, " received"
 	line "OLD AMBER!@@"
 
-_Museum1FText_5c299:: ; 967a8 (25:67a8)
+_Museum1FText_5c299::
 	text "Ssh! Get the OLD"
 	line "AMBER checked!"
 	done
 
-_Museum1FText_5c29e:: ; 967c9 (25:67c9)
+_Museum1FText_5c29e::
 	text "You don't have"
 	line "space for this!"
 	done
 
-_Museum1FText_5c2ad:: ; 967e8 (25:67e8)
+_Museum1FText_5c2ad::
 	text "We are proud of 2"
 	line "fossils of very"
 	cont "rare, prehistoric"
 	cont "#MON!"
 	done
 
-_Museum1FText_5c2bc:: ; 96823 (25:6823)
+_Museum1FText_5c2bc::
 	text "The AMBER is"
 	line "clear and gold!"
 	done

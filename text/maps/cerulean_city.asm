@@ -139,46 +139,25 @@ _CeruleanCityText6:: ; a50f6 (29:50f6)
 	cont "with the ROCKETs!"
 	done
 
-_CeruleanCityText_19730:: ; a5188 (29:5188)
-IF DEF(_YELLOW)
-	text "OK! ELECTRODE!"
-ELSE
+_CeruleanCityText_19730::
 	text "OK! SLOWBRO!"
-ENDC
 	line "Use SONICBOOM!"
-IF DEF(_YELLOW)
-	cont "Please ELECTRODE,"
-ELSE
 	cont "Come on, SLOWBRO"
-ENDC
 	cont "pay attention!"
 	done
 
-_CeruleanCityText_19735:: ; a51c5 (29:51c5)
-IF DEF(_YELLOW)
-	text "ELECTRODE, TACKLE!"
-ELSE
+_CeruleanCityText_19735::
 	text "SLOWBRO punch!"
-ENDC
 	line "No! You blew it"
 	cont "again!"
 	done
 
-_CeruleanCityText_1973a:: ; a51ec (29:51ec)
-IF DEF(_YELLOW)
-	text "ELECTRODE, SWIFT!"
-ELSE
+_CeruleanCityText_1973a::
 	text "SLOWBRO, WITHDRAW!"
-ENDC
 	line "No! That's wrong!"
 
-IF DEF(_YELLOW)
-	para "Training #MON"
-	line "is difficult!"
-ELSE
 	para "It's so hard to"
 	line "control #MON!"
-ENDC
 
 	para "Your #MON's"
 	line "obedience depends"
@@ -186,53 +165,36 @@ ENDC
 	cont "as a trainer!"
 	done
 
-_CeruleanCityText_1976f:: ; a526b (29:526b)
-IF DEF(_YELLOW)
-	text "ELECTRODE took a"
-ELSE
+_CeruleanCityText_1976f::
 	text "SLOWBRO took a"
-ENDC
 	line "snooze..."
 	done
 
-_CeruleanCityText_19774:: ; a5285 (29:5285)
-IF DEF(_YELLOW)
-	text "ELECTRODE is"
-ELSE
+_CeruleanCityText_19774::
 	text "SLOWBRO is"
-ENDC
 	line "loafing around..."
 	done
 
-_CeruleanCityText_19779:: ; a52a3 (29:52a3)
-IF DEF(_YELLOW)
-	text "ELECTRODE turned"
-ELSE
+_CeruleanCityText_19779::
 	text "SLOWBRO turned"
-ENDC
 	line "away..."
 	done
 
-_CeruleanCityText_1977e:: ; a52bb (29:52bb)
-IF DEF(_YELLOW)
-	text "ELECTRODE"
-ELSE
+_CeruleanCityText_1977e::
 	text "SLOWBRO"
-ENDC
 	line "ignored orders..."
 	done
 
-_CeruleanCityText9:: ; a52d6 (29:52d6)
+_CeruleanCityText9::
 	text "I want a bright"
 	line "red BICYCLE!"
 
 	para "I'll keep it at"
-	line "home, since I"
-	cont "don't want it to"
+	line "home, so it won't"
 	cont "get dirty!"
 	done
 
-_CeruleanCityText10:: ; a531f (29:531f)
+_CeruleanCityText10::
 	text "This is CERULEAN"
 	line "CAVE! Horribly"
 	cont "strong #MON"
@@ -244,14 +206,14 @@ _CeruleanCityText10:: ; a531f (29:531f)
 	cont "is allowed in!"
 	done
 
-_CeruleanCityText12:: ; a539a (29:539a)
+_CeruleanCityText12::
 	text "CERULEAN CITY"
 	line "A Mysterious,"
 	cont "Blue Aura"
 	cont "Surrounds It"
 	done
 
-_CeruleanCityText13:: ; a53ce (29:53ce)
+_CeruleanCityText13::
 	text "TRAINER TIPS"
 
 	para "Pressing B Button"
@@ -260,13 +222,13 @@ _CeruleanCityText13:: ; a53ce (29:53ce)
 	cont "process."
 	done
 
-_CeruleanCityText16:: ; a541a (29:541a)
+_CeruleanCityText16::
 	text "Grass and caves"
 	line "handled easily!"
 	cont "BIKE SHOP"
 	done
 
-_CeruleanCityText17:: ; a5445 (29:5445)
+_CeruleanCityText17::
 	text "CERULEAN CITY"
 	line "#MON GYM"
 	cont "LEADER: MISTY"

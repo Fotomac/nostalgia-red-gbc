@@ -1,4 +1,4 @@
-_CeruleanGymText_5c7be:: ; 989c1 (26:49c1)
+_CeruleanGymText_5c7be::
 	text "Hey, you! Trainers"
 	line "who want to turn"
 	cont "pro have to have"
@@ -23,7 +23,7 @@ _CeruleanGymText_5c7be:: ; 989c1 (26:49c1)
 	line "sweetie?"
 	done
 
-_CeruleanGymText_5c7c3:: ; 98a7b (26:4a7b)
+_CeruleanGymText_5c7c3::
 	text "TM11 teaches"
 	line "BUBBLEBEAM!"
 
@@ -31,7 +31,7 @@ _CeruleanGymText_5c7c3:: ; 98a7b (26:4a7b)
 	line "aquatic #MON!"
 	done
 
-_CeruleanGymText_5c7c8:: ; 98ab0 (26:4ab0)
+_CeruleanGymText_5c7c8::
 	text "The CASCADEBADGE"
 	line "makes all #MON"
 	cont "up to L30 obey!"
@@ -41,11 +41,7 @@ _CeruleanGymText_5c7c8:: ; 98ab0 (26:4ab0)
 
 	para "There's more, you"
 	line "can now use CUT"
-IF DEF(_YELLOW)
-	cont "anytime!"
-ELSE
 	cont "any time!"
-ENDC
 
 	para "You can CUT down"
 	line "small bushes to"
@@ -55,23 +51,18 @@ ENDC
 	line "my favorite TM!"
 	done
 
-_ReceivedTM11Text:: ; 98b7d (26:4b7d)
+_ReceivedTM11Text::
 	text $52, " received"
 	line "TM11!@@"
 
-_CeruleanGymText_5c7d3:: ; 98b90 (26:4b90)
+_CeruleanGymText_5c7d3::
 	text "You better make"
 	line "room for this!"
 	done
 
-_CeruleanGymText_5c7d8:: ; 98bb0 (26:4bb0)
-IF DEF(_YELLOW)
-	text "I can't"
-	line "believe I lost!"
-ELSE
+_CeruleanGymText_5c7d8::
 	text "Wow!"
 	line "You're too much!"
-ENDC
 
 	para "All right!"
 
@@ -79,19 +70,19 @@ ENDC
 	line "CASCADEBADGE to"
 	cont "show you beat me!@@"
 
-_CeruleanGymBattleText1:: ; 98c05 (26:4c05)
+_CeruleanGymBattleText1::
 	text "I'm more than good"
 	line "enough for you!"
 
 	para "MISTY can wait!"
 	done
 
-_CeruleanGymEndBattleText1:: ; 98c38 (26:4c38)
+_CeruleanGymEndBattleText1::
 	text "You"
 	line "overwhelmed me!"
 	prompt
 
-_CeruleanGymAfterBattleText1:: ; 98c4d (26:4c4d)
+_CeruleanGymAfterBattleText1::
 	text "Unless you face"
 	line "other trainers,"
 	cont "you won't know"
@@ -99,19 +90,19 @@ _CeruleanGymAfterBattleText1:: ; 98c4d (26:4c4d)
 	cont "can be."
 	done
 
-_CeruleanGymBattleText2:: ; 98c93 (26:4c93)
+_CeruleanGymBattleText2::
 	text "Splash!"
 
 	para "I'm first up!"
 	line "Let's do it!"
 	done
 
-_CeruleanGymEndBattleText2:: ; 98cb5 (26:4cb5)
+_CeruleanGymEndBattleText2::
 	text "That"
 	line "can't be!"
 	prompt
 
-_CeruleanGymAfterBattleText2:: ; 98cc4 (26:4cc4)
+_CeruleanGymAfterBattleText2::
 	text "MISTY is going to"
 	line "keep improving!"
 
@@ -119,7 +110,7 @@ _CeruleanGymAfterBattleText2:: ; 98cc4 (26:4cc4)
 	line "someone like you!"
 	done
 
-_CeruleanGymText_5c82a:: ; 98d0a (26:4d0a)
+_CeruleanGymText_5c82a::
 	text "Yo! Champ in"
 	line "making!"
 
@@ -137,15 +128,11 @@ _CeruleanGymText_5c82a:: ; 98d0a (26:4d0a)
 	line "electricity!"
 	done
 
-_CeruleanGymText_5c82f:: ; 98db0 (26:4db0)
+_CeruleanGymText_5c82f::
 	text "You beat MISTY!"
 	line "What'd I tell ya?"
 
-IF DEF(_YELLOW)
-	para "You and me, kid,"
-ELSE
 	para "You and me kid,"
-ENDC
 	line "we're both quite"
 	cont "amazing, right?"
 	done
