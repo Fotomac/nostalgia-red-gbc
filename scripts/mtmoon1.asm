@@ -179,7 +179,7 @@ WalkAroundPlayer: ; 19600 (6:5600)
 	db NPC_MOVEMENT_DOWN
 	db NPC_MOVEMENT_DOWN
 	db NPC_MOVEMENT_DOWN
-	db $FF
+	db $ff
 
 	db $ff
 

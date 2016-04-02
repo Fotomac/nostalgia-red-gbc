@@ -1,5 +1,5 @@
 CeruleanGymScript: ; 5c6b3 (17:46b3)
-	ld hl, wd126
+	ld hl, wCurrentMapScriptFlags
 	bit 6, [hl]
 	res 6, [hl]
 	call nz, CeruleanGymScript_5c6d0
@@ -64,11 +64,6 @@ CeruleanGymScript_5c70d: ; 5c70d (17:470d)
 	set 1, [hl]
 	ld hl, wBeatGymFlags
 	set 1, [hl]
-
-	ld a, HS_BROCK_MT__MOON
-	ld [wMissableObjectIndex], a
-	predef ShowObject
-
 
 	; deactivate gym trainers
 	SetEvents EVENT_BEAT_CERULEAN_GYM_TRAINER_0, EVENT_BEAT_CERULEAN_GYM_TRAINER_1

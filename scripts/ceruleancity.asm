@@ -1,39 +1,8 @@
 CeruleanCityScript: ; 19480 (6:5480)
 	call EnableAutoTextBoxDrawing
-	call CeruleanCityPhoneCall
 	ld hl, CeruleanCityScriptPointers
 	ld a, [wCeruleanCityCurScript]
 	jp CallFunctionInTable
-
-CeruleanCityPhoneCall:
-	ld hl,wPhoneCallFlags
-	bit 1,[hl]
-	ret nz
-	ld a, 1
-	ld [hSpriteIndexOrTextID], a
-	callba DisplayTextIDInit
-	ld a, SFX_TURN_OFF_PC
-	call PlaySound
-	call WaitForSoundToFinish
-	ld a, [wPlayerStarter]
-	cp CHARMANDER
-	jr z, .charmander
-	cp SQUIRTLE
-	jr z, .squirtle
-	ld hl,CeruleanPhoneCallTextBulbasaur
-	jr .showText
-.charmander
-	ld hl,CeruleanPhoneCallTextCharmander
-	jr .showText
-.squirtle
-	ld hl,CeruleanPhoneCallTextSquirtle
-.showText
-	call PrintText
-	ld a, SFX_TURN_OFF_PC
-	call PlaySound
-	ld hl,wPhoneCallFlags
-	set 1,[hl]
-	jp CloseTextDisplay
 
 CeruleanCityScript_1948c: ; 1948c (6:548c)
 	xor a
@@ -480,16 +449,4 @@ CeruleanCityText16: ; 19797 (6:5797)
 
 CeruleanCityText17: ; 1979c (6:579c)
 	TX_FAR _CeruleanCityText17
-	db "@"
-
-CeruleanPhoneCallTextBulbasaur: ; 1947b (6:547b)
-	TX_FAR _CeruleanPhoneCallTextBulbasaur
-	db "@"
-
-CeruleanPhoneCallTextCharmander: ; 1947b (6:547b)
-	TX_FAR _CeruleanPhoneCallTextCharmander
-	db "@"
-
-CeruleanPhoneCallTextSquirtle: ; 1947b (6:547b)
-	TX_FAR _CeruleanPhoneCallTextSquirtle
 	db "@"
