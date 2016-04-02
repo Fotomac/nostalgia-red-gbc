@@ -53,9 +53,18 @@ OakSpeech: ; 6115 (1:6115)
 	call SpecialWarpIn
 	xor a
 	ld [hTilesetType],a
-	ld a,[wd732]
-	bit 1,a ; possibly a debug mode bit
-	jp nz,.skipChoosingNames
+IF GEN_2_GRAPHICS
+	ld a, PAL_OAK
+ELSE
+	ld a, PAL_BROWNMON
+ENDC
+	call GotPalID ; HAX
+	nop
+	nop
+	nop
+	;ld a,[wd732]
+	;bit 1,a ; possibly a debug mode bit
+	;jp nz,.skipChoosingNames
 	ld hl,BoyGirlText  ; added to the same file as the other oak text
     call PrintText     ; show this text
     call BoyGirlChoice ; added routine at the end of this file
@@ -73,7 +82,8 @@ OakSpeech: ; 6115 (1:6115)
 	ld hl,OakSpeechText1
 	call PrintText
 	call GBFadeOutToWhite
-	call ClearScreen
+	;call ClearScreen
+	call GetNidorinoPalID ; HAX
 	ld a,NIDORINO
 	ld [wd0b5],a
 	ld [wcf91],a
@@ -84,7 +94,7 @@ OakSpeech: ; 6115 (1:6115)
 	ld hl,OakSpeechText2
 	call PrintText
 	call GBFadeOutToWhite
-	call ClearScreen
+	call GetRedPalID ; HAX
 	ld de,RedPicFront
 	lb bc, Bank(RedPicFront), $00
     ld a, [wPlayerGender] ; check gender
@@ -99,7 +109,7 @@ OakSpeech: ; 6115 (1:6115)
 	call PrintText
 	call ChoosePlayerName
 	call GBFadeOutToWhite
-	call ClearScreen
+	call GetRivalPalID ; HAX
 	ld de,Rival1Pic
 	lb bc, Bank(Rival1Pic), $00
 	call IntroDisplayPicCenteredOrUpperRight
@@ -109,7 +119,7 @@ OakSpeech: ; 6115 (1:6115)
 	call ChooseRivalName
 .skipChoosingNames
 	call GBFadeOutToWhite
-	call ClearScreen
+	call GetRedPalID ; HAX
 	ld de,RedPicFront
 	lb bc, Bank(RedPicFront), $00
     ld a, [wPlayerGender] ; check gender

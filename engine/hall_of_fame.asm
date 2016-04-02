@@ -183,7 +183,7 @@ HoFMonInfoText: ; 70329 (1c:4329)
 	next "TYPE2/@"
 
 HoFLoadPlayerPics: ; 7033e (1c:433e)
-    ld a, [wPlayerGender] ; New gender check
+	ld a, [wPlayerGender] ; New gender check
     bit 2, a              ; New gender check
     jr nz, .GirlStuff1
 	ld de, RedPicFront
@@ -200,7 +200,7 @@ HoFLoadPlayerPics: ; 7033e (1c:433e)
 	call CopyData
 	ld de, vFrontPic
 	call InterlaceMergeSpriteBuffers
-    ld a, [wPlayerGender] ; new gender check
+	ld a, [wPlayerGender] ; new gender check
     bit 2, a              ; new gender check
     jr nz, .GirlStuff2
 	ld de, RedPicBack
@@ -211,10 +211,22 @@ HoFLoadPlayerPics: ; 7033e (1c:433e)
     ld a, BANK(LeafPicBack)
 .routine2
 	call UncompressSpriteFromDE
+
+IF GEN_2_GRAPHICS ; Use uncompressed red sprite
+	ld a,$66
+	ld c,a
+	ld de, vBackPic
+	call LoadUncompressedSpriteData
+	nop
+	nop
+	nop
+	nop
+ELSE
 	predef ScaleSpriteByTwo
 	ld de, vBackPic
 	call InterlaceMergeSpriteBuffers
 	ld c, $1
+ENDC
 
 HoFLoadMonPlayerPicTileIDs: ; 7036d (1c:436d)
 ; c = base tile ID
@@ -240,12 +252,12 @@ HoFDisplayPlayerStats: ; 70377 (1c:4377)
 	ld de, HoFPlayTimeText
 	call PlaceString
 	coord hl, 5, 7
-	ld de, wPlayTimeHours + 1
+	ld de, wPlayTimeHours
 	lb bc, 1, 3
 	call PrintNumber
 	ld [hl], $6d
 	inc hl
-	ld de, wPlayTimeMinutes + 1
+	ld de, wPlayTimeMinutes
 	lb bc, LEADING_ZEROES | 1, 2
 	call PrintNumber
 	coord hl, 1, 9
