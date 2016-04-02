@@ -88,8 +88,11 @@ DisplayNamingScreen: ; 6596 (1:6596)
 	call GBPalWhiteOutWithDelay3
 	call ClearScreen
 	call UpdateSprites
-	ld b, SET_PAL_GENERIC
+
+	; HAX: Use command $0f instead of $08
+	ld b, SET_PAL_NAMING_SCREEN
 	call RunPaletteCommand
+
 	call LoadHpBarAndStatusTilePatterns
 	call LoadEDTile
 	callba LoadMonPartySpriteGfx
