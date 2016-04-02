@@ -277,7 +277,7 @@ RazorWindAnim: ; 7a25c (1e:625c)
 	db $04,$0C,$16
 	db $FF
 
-SwordsDanceAnim: ; 7a26Slash0 (1e:6260)
+SwordsDanceAnim: ; 7a260 (1e:6260)
 	db $46,$0D,$18
 	db $46,$0D,$18
 	db $46,$0D,$18

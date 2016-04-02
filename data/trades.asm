@@ -16,7 +16,7 @@ ELSE
 	db JIGGLYPUFF,MR_MIME,   0,"MARCEL@@@@@"
 	db HAUNTER,   KADABRA,   1,"ESPER@@@@@@"
 	db GROWLITHE, KRABBY,    0,"DRAKE@@@@@@"
-	db PIDGEY,    FARFETCH_D,2,"DUX@@@@@@@@"
+	db SPEAROW,   FARFETCHD, 2,"DUX@@@@@@@@"
 	db PERSIAN,   TAUROS,    0,"GUTS@@@@@@@"
 	db MACHOKE,   HAUNTER,   1,"SPECTRE@@@@"
 	db KADABRA,   GRAVELER,  1,"ROCKY@@@@@@"
