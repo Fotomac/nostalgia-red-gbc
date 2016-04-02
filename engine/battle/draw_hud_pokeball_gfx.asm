@@ -17,7 +17,11 @@ LoadPartyPokeballGfx: ; 3a85d (e:685d)
 	jp CopyVideoData
 
 SetupOwnPartyPokeballs: ; 3a869 (e:6869)
+IF GEN_2_GRAPHICS
+	call PlayerHUDHAX
+ELSE
 	call PlacePlayerHUDTiles
+ENDC
 	ld hl, wPartyMon1
 	ld de, wPartyCount
 	call SetupPokeballs
@@ -118,6 +122,7 @@ WritePokeballOAMData: ; 3a8e1 (e:68e1)
 
 PlacePlayerHUDTiles: ; 3a902 (e:6902)
 	ld hl, PlayerBattleHUDGraphicsTiles
+PlayerHUDUpdateDone:
 	ld de, wHUDGraphicsTiles
 	ld bc, $3
 	call CopyData
@@ -137,7 +142,11 @@ PlaceEnemyHUDTiles: ; 3a919 (e:6919)
 	ld bc, $3
 	call CopyData
 	coord hl, 1, 2
+IF GEN_2_GRAPHICS
+	jp EnemyHUDHAX
+ELSE
 	ld de, $1
+ENDC
 	jr PlaceHUDTiles
 
 EnemyBattleHUDGraphicsTiles: ; 3a92d (e:692d)
@@ -148,6 +157,7 @@ EnemyBattleHUDGraphicsTiles: ; 3a92d (e:692d)
 
 PlaceHUDTiles: ; 3a930 (e:6930)
 	ld [hl], $73
+EnemyHUDUpdateDone:
 	ld bc, SCREEN_WIDTH
 	add hl, bc
 	ld a, [wHUDGraphicsTiles + 1] ; leftmost tile

@@ -181,15 +181,24 @@ DungeonMaps2: ; 70a44 (1c:4a44)
 	db UNKNOWN_DUNGEON_1
 	db $FF
 
+; Load a black tile for battle transition.
+; HAXed to set the palette as well.
+; The tile itself was relocated to make room.
 LoadBattleTransitionTile: ; 70a4d (1c:4a4d)
+	ld a,2
+	ld [rSVBK],a
+	ld a, 7
+	ld [W2_TilesetPaletteMap + $ff], a
+	xor a
+	ld [rSVBK],a
+
 	ld hl, vChars1 + $7f0
-	ld de, BattleTransitionTile
-	lb bc, BANK(BattleTransitionTile), (BattleTransitionTileEnd - BattleTransitionTile) / $10
+	ld de, BlackTile
+	lb bc, BANK(BlackTile), (BlackTileEnd - BlackTile) / $10
 	jp CopyVideoData
 
-BattleTransitionTile: ; 70a59 (1c:4a59)
-	INCBIN "gfx/battle_transition.2bpp"
-BattleTransitionTileEnd:
+
+	ORG $1c, $4a69
 
 BattleTransition_BlackScreen: ; 70a69 (1c:4a69)
 	ld a, $ff
