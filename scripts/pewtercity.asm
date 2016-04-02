@@ -1,44 +1,8 @@
 PewterCityScript: ; 19237 (6:5237)
 	call EnableAutoTextBoxDrawing
-	call PewterCityPhoneCall
 	ld hl, PewterCityScriptPointers
 	ld a, [wPewterCityCurScript]
 	jp CallFunctionInTable
-
-PewterCityPhoneCall:
-	ld hl,wPhoneCallFlags
-	bit 0,[hl]
-	ret nz
-	ld a, [wObtainedBadges]
-	bit 0,a
-	ret z
-	call IsPlayerCharacterBeingControlledByGame
-	ret nz
-	ld a, 1
-	ld [hSpriteIndexOrTextID], a
-	callba DisplayTextIDInit
-	ld a, SFX_TURN_OFF_PC
-	call PlaySound
-	call WaitForSoundToFinish
-	ld a, [wPlayerStarter]
-	cp CHARMANDER
-	jr z, .charmander
-	cp SQUIRTLE
-	jr z, .squirtle
-	ld hl,PewterPhoneCallTextBulbasaur
-	jr .showText
-.charmander
-	ld hl,PewterPhoneCallTextCharmander
-	jr .showText
-.squirtle
-	ld hl,PewterPhoneCallTextSquirtle
-.showText
-	call PrintText
-	ld a, SFX_TURN_OFF_PC
-	call PlaySound
-	ld hl,wPhoneCallFlags
-	set 0,[hl]
-	jp CloseTextDisplay
 
 PewterCityScriptPointers: ; 19243 (6:5243)
 	dw PewterCityScript0
@@ -357,16 +321,4 @@ PewterCityText11: ; 19476 (6:5476)
 
 PewterCityText12: ; 1947b (6:547b)
 	TX_FAR _PewterCityText12
-	db "@"
-
-PewterPhoneCallTextBulbasaur: ; 1947b (6:547b)
-	TX_FAR _PewterPhoneCallTextBulbasaur
-	db "@"
-
-PewterPhoneCallTextCharmander: ; 1947b (6:547b)
-	TX_FAR _PewterPhoneCallTextCharmander
-	db "@"
-
-PewterPhoneCallTextSquirtle: ; 1947b (6:547b)
-	TX_FAR _PewterPhoneCallTextSquirtle
 	db "@"

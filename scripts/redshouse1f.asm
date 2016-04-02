@@ -76,6 +76,7 @@ RedsHouse1FText2: ; 0x481c6 TV
 	ld hl,WizardOfOzText
 	call PrintText
 .notUp
+	call PrintText
 	jp TextScriptEnd
 
 StandByMeText: ; 481da (12:41da)
