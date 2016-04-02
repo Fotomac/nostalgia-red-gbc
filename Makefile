@@ -61,10 +61,10 @@ asm_opt = -h
 link_opt = -n poke$*.sym
 
 # Header options for rgbfix.
-dmg_opt   = -jsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03
-red_opt   = $(dmg_opt) -t "POKEMON RED"
-green_opt = $(dmg_opt) -t "POKEMON GREEN"
-blue_opt  = $(dmg_opt) -t "POKEMON BLUE"
+cgb_opt   = -Cjv -k 01 -l 0x33 -m 0x13 -p 0 -r 03
+red_opt   = $(cgb_opt) -t "POKEMON RED"
+green_opt = $(cgb_opt) -t "POKEMON GREEN"
+blue_opt  = $(cgb_opt) -t "POKEMON BLUE"
 
 
 %.png:  ;

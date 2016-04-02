@@ -1,3 +1,5 @@
+GEN_2_GRAPHICS	EQU 1
+
 INCLUDE "macros.asm"
 
 INCLUDE "hram.asm"
@@ -30,3 +32,4 @@ INCLUDE "constants/tilesets.asm"
 INCLUDE "constants/starter_mons.asm"
 INCLUDE "constants/event_constants.asm"
 INCLUDE "constants/event_macros.asm"
+INCLUDE "color/wram.asm"

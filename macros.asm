@@ -642,6 +642,16 @@ EAST_MAP_CONNECTION: MACRO
 	dw wOverworldMap + 7 + \2_WIDTH ; window (position of the upper left block after entering the map)
 ENDM
 
+ORG: MACRO
+	SECTION "ORG\@",ROMX[\2],BANK[\1]
+	ENDM
+
+CALL_INDIRECT: MACRO
+	ld b, BANK(\1)
+	ld hl, \1
+	rst $18
+ENDM
+
 tmlearn: MACRO
 x = 0
 	rept _NARG
