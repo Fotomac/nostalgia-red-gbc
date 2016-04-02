@@ -70,7 +70,7 @@ ItemUsePtrTable: ; d5e1 (3:55e1)
 	dw ItemUseMedicine   ; FULL_HEAL
 	dw ItemUseMedicine   ; REVIVE
 	dw ItemUseMedicine   ; MAX_REVIVE
-	dw ItemUseGuardSpec  ; GUARD_SPEC_
+	dw ItemUseGuardSpec  ; GUARD_SPEC
 	dw ItemUseSuperRepel ; SUPER_REPL
 	dw ItemUseMaxRepel   ; MAX_REPEL
 	dw ItemUseDireHit    ; DIRE_HIT
@@ -78,7 +78,7 @@ ItemUsePtrTable: ; d5e1 (3:55e1)
 	dw ItemUseMedicine   ; FRESH_WATER
 	dw ItemUseMedicine   ; SODA_POP
 	dw ItemUseMedicine   ; LEMONADE
-	dw UnusableItem      ; S_S__TICKET
+	dw UnusableItem      ; S_S_TICKET
 	dw UnusableItem      ; GOLD_TEETH
 	dw ItemUseXStat      ; X_ATTACK
 	dw ItemUseXStat      ; X_DEFEND
@@ -90,7 +90,7 @@ ItemUsePtrTable: ; d5e1 (3:55e1)
 	dw UnusableItem      ; SILPH_SCOPE
 	dw ItemUsePokeflute  ; POKE_FLUTE
 	dw UnusableItem      ; LIFT_KEY
-	dw UnusableItem      ; EXP__ALL
+	dw UnusableItem      ; EXP_ALL
 	dw ItemUseOldRod     ; OLD_ROD
 	dw ItemUseGoodRod    ; GOOD_ROD
 	dw ItemUseSuperRod   ; SUPER_ROD
@@ -1054,7 +1054,7 @@ ItemUseMedicine: ; dabb (3:5abb)
 	ld [hFlags_0xFFF6],a
 	ld a,$02
 	ld [wHPBarType],a
-	predef UpdateHPBar2 ; animate HP bar decrease of pokemon that used Softboiled
+	predef UpdateHPBar_Hook ; animate HP bar decrease of pokemon that used Softboiled
 	ld a,[hFlags_0xFFF6]
 	res 0,a
 	ld [hFlags_0xFFF6],a
@@ -1204,7 +1204,7 @@ ItemUseMedicine: ; dabb (3:5abb)
 	ld [hFlags_0xFFF6],a
 	ld a,$02
 	ld [wHPBarType],a
-	predef UpdateHPBar2 ; animate the HP bar lengthening
+	predef UpdateHPBar_Hook ; animate the HP bar lengthening
 	ld a,[hFlags_0xFFF6]
 	res 0,a
 	ld [hFlags_0xFFF6],a
@@ -1870,9 +1870,42 @@ CoinCaseNumCoinsText: ; e247 (3:6247)
 ItemUseOldRod: ; e24c (3:624c)
 	call FishingInit
 	jp c, ItemUseNotTime
-	lb bc, 5, MAGIKARP
-	ld a, $1 ; set bite
+.RandomLoop ; choose which slot
+	call Random
+	srl a
+	jr c, .SetBite
+	and %111
+	cp 6
+	jr nc, .RandomLoop
+; Determine if we need to load normal or sea route data
+	push af
+	ld a,[W_CURMAP]
+	ld hl,OldRodMons2 ; Sea Routes
+	cp ROUTE_19
+	jr z,.done
+	cp ROUTE_20
+	jr z,.done
+	cp ROUTE_21
+	jr z,.done
+	ld hl,OldRodMons1 ; Normal Routes
+.done
+; Set up the encounter
+	pop af
+	add a,a
+	ld c,a
+	ld b,0
+	add hl,bc
+	ld b,[hl]
+	inc hl
+	ld c,[hl]
+	and a
+.SetBite
+	ld a,0
+	rla
+	xor 1
 	jr RodResponse
+    
+INCLUDE "data/old_rod.asm"
 
 ItemUseGoodRod: ; e259 (3:6259)
 	call FishingInit
@@ -1881,8 +1914,8 @@ ItemUseGoodRod: ; e259 (3:6259)
 	call Random
 	srl a
 	jr c, .SetBite
-	and %11
-	cp 2
+	and %111
+	cp 6
 	jr nc, .RandomLoop
 	; choose which monster appears
 	ld hl,GoodRodMons
