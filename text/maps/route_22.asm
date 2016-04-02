@@ -49,7 +49,7 @@ _Route22Text_511bc:: ; 92410 (24:6410)
 	cont "some, too!"
 	prompt
 
-_Route22RivalBeforeBattleText2:: ; 92450 (24:6450)
+_Route22RivalBeforeBattleText2::
 	text $53, ": What?"
 	line $52, "! What a"
 	cont "surprise to see"
@@ -62,21 +62,15 @@ _Route22RivalBeforeBattleText2:: ; 92450 (24:6450)
 	line "the BADGEs too?"
 	cont "That's cool!"
 
-IF DEF(_YELLOW)
-	para "Then I'll whip"
-	line "you, ", $52, ", as"
-	cont "a warmup for"
-ELSE
 	para "Then I'll whip you"
 	line $52, " as a"
 	cont "warm up for"
-ENDC
 	cont "#MON LEAGUE!"
 
 	para "Come on!"
 	done
 
-_Route22RivalAfterBattleText2:: ; 92506 (24:6506)
+_Route22RivalAfterBattleText2::
 	text "That loosened me"
 	line "up! I'm ready for"
 	cont "#MON LEAGUE!"
@@ -89,7 +83,7 @@ _Route22RivalAfterBattleText2:: ; 92506 (24:6506)
 	cont "here. Smell ya!"
 	done
 
-_Route22RivalDefeatedText2:: ; 92583 (24:6583)
+_Route22RivalDefeatedText2::
 	text "What!?"
 
 	para "I was just"
@@ -108,7 +102,7 @@ _Route22Text_511d0:: ; 925a0 (24:65a0)
 	cont "ready! Hahaha!"
 	prompt
 
-_Route22FrontGateText:: ; 92606 (24:6606)
+_Route22FrontGateText::
 	text "#MON LEAGUE"
 	line "Front Gate"
 	done
