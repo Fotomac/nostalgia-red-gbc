@@ -78,7 +78,7 @@ DrainHPEffect_: ; 783f (1:783f)
 	xor a
 .next2
 	ld [wHPBarType], a
-	predef UpdateHPBar2
+	predef UpdateHPBar_Hook
 	predef DrawPlayerHUDAndHPBar
 	predef DrawEnemyHUDAndHPBar
 	callab ReadPlayerMonCurHPAndStatus
