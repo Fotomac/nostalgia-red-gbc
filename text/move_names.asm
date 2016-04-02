@@ -165,5 +165,6 @@ MoveNames:: ; b0000 (2c:4000)
 	db "SUBSTITUTE@"
 	db "METAL CLAW@"
 	db "IRON TAIL@"
+	db "SCALD@"
 	db "STRUGGLE@"
 
