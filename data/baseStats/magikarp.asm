@@ -26,4 +26,4 @@ db 5 ; growth rate
 	tmlearn 34
 	tmlearn 44
 	tmlearn 0
-db 0 ; padding
+db BANK(MagikarpPicFront)

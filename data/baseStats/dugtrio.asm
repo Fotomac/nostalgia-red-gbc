@@ -9,7 +9,11 @@ db GROUND ; species type 1
 db GROUND ; species type 2
 db 50 ; catch rate
 db 153 ; base exp yield
-INCBIN "pic/bmon/dugtrio.pic",0,1 ; 66, sprite dimensions
+IF GEN_2_GRAPHICS
+	INCBIN "pic/gsmon/dugtrio.pic",0,1 ; 77, sprite dimensions
+ELSE
+	INCBIN "pic/bmon/dugtrio.pic",0,1 ; 66, sprite dimensions
+ENDC
 dw DugtrioPicFront
 dw DugtrioPicBack
 ; attacks known at lvl 0
@@ -30,4 +34,4 @@ IF DEF(_YELLOW)
 ELSE
 	tmlearn 50
 ENDC
-db 0 ; padding
+db BANK(DugtrioPicFront)

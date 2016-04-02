@@ -9,7 +9,11 @@ db GHOST ; species type 1
 db POISON ; species type 2
 db 190 ; catch rate
 db 95 ; base exp yield
-INCBIN "pic/bmon/gastly.pic",0,1 ; 77, sprite dimensions
+IF GEN_2_GRAPHICS
+	INCBIN "pic/gsmon/gastly.pic",0,1 ; 66, sprite dimensions
+ELSE
+	INCBIN "pic/bmon/gastly.pic",0,1 ; 77, sprite dimensions
+ENDC
 dw GastlyPicFront
 dw GastlyPicBack
 ; attacks known at lvl 0
@@ -26,4 +30,4 @@ db 3 ; growth rate
 	tmlearn 34,36
 	tmlearn 42,44,46,47
 	tmlearn 50
-db 0 ; padding
+db BANK(GastlyPicFront)

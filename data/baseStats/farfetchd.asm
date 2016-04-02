@@ -1,5 +1,5 @@
 FarfetchdBaseStats: ; 38cd6 (e:4cd6)
-db DEX_FARFETCH_D ; pokedex id
+db DEX_FARFETCHD ; pokedex id
 db 52 ; base hp
 db 65 ; base attack
 db 55 ; base defense
@@ -26,4 +26,4 @@ db 0 ; growth rate
 	tmlearn 33,34,39,40
 	tmlearn 44
 	tmlearn 50,51,52
-db 0 ; padding
+db BANK(FarfetchdPicFront)
