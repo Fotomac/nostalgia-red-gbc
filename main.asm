@@ -2120,10 +2120,6 @@ SECTION "bank3",ROMX,BANK[$3]
 
 INCLUDE "engine/joypad.asm"
 
-INCLUDE "data/map_songs.asm"
-
-INCLUDE "data/map_header_banks.asm"
-
 ClearVariablesAfterLoadingMapData: ; c335 (3:4335)
 	ld a, SCREEN_HEIGHT_PIXELS
 	ld [hWY], a
@@ -5459,6 +5455,10 @@ ENDC
 
 
 SECTION "Battle (bank 9)", ROMX, BANK[$9]
+
+INCLUDE "data/map_songs.asm"
+INCLUDE "data/map_header_banks.asm"
+
 INCLUDE "engine/battle/print_type.asm"
 INCLUDE "engine/battle/save_trainer_name.asm"
 INCLUDE "engine/battle/moveEffects/focus_energy_effect.asm"
@@ -5522,6 +5522,11 @@ RedPicBack::           INCBIN "pic/trainer/redb.pic"
 LeafPicBack::          INCBIN "pic/trainer/leafb.pic"
 OldManPic::            INCBIN "pic/trainer/oldman.pic"
 ENDC
+
+RedFishingTilesFront: INCBIN "gfx/red_fishing_tile_front.2bpp"
+RedFishingTilesBack:  INCBIN "gfx/red_fishing_tile_back.2bpp"
+RedFishingTilesSide:  INCBIN "gfx/red_fishing_tile_side.2bpp"
+RedFishingRodTiles:   INCBIN "gfx/red_fishingrod_tiles.2bpp"
 
 LeafFishingTilesFront: INCBIN "gfx/leaf_fishing_tile_front.2bpp"
 LeafFishingTilesBack:  INCBIN "gfx/leaf_fishing_tile_back.2bpp"
@@ -6846,11 +6851,6 @@ INCLUDE "engine/overworld/cut2.asm"
 
 INCLUDE "engine/overworld/ssanne.asm"
 
-RedFishingTilesFront: INCBIN "gfx/red_fishing_tile_front.2bpp"
-RedFishingTilesBack:  INCBIN "gfx/red_fishing_tile_back.2bpp"
-RedFishingTilesSide:  INCBIN "gfx/red_fishing_tile_side.2bpp"
-RedFishingRodTiles:   INCBIN "gfx/red_fishingrod_tiles.2bpp"
-
 INCLUDE "data/animations.asm"
 
 INCLUDE "engine/evolution.asm"
@@ -6858,9 +6858,6 @@ INCLUDE "engine/evolution.asm"
 INCLUDE "engine/overworld/elevator.asm"
 
 INCLUDE "engine/items/tm_prices.asm"
-
-	nop
-	nop
 
 ; Actually this doesn't do everything needed to spriteify
 ; It copies the tiles and the palette of the player pokemon.
