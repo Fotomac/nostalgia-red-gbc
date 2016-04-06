@@ -1,10 +1,12 @@
 _ViridianGymText_74ace::
-	text "Fwahahaha! This is"
-	line "my hideout!"
+	text "Fwahahaha! Welcome"
+	line "to my hideout!"
 
-	para "I planned to"
-	line "resurrect TEAM"
-	cont "ROCKET here!"
+	para "It shall be so"
+	line "until I can"
+	cont "restore TEAM"
+	cont "ROCKET to its"
+	cont "former glory."
 
 	para "But, you have"
 	line "caught me again!"
@@ -30,11 +32,13 @@ _ViridianGymText_74ad9::
 	text "Having lost, I"
 	line "cannot face my"
 	cont "underlings!"
+	cont "As of today,"
 	cont "TEAM ROCKET is"
 	cont "finished forever!"
 
-	para "I will dedicate my"
-	line "life to the study"
+	para "As for myself, I"
+	line "will dedicate my"
+	cont "life to the study"
 	cont "of #MON!"
 
 	para "Let us meet again"
