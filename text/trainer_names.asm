@@ -28,7 +28,7 @@ TrainerNames: ; 399ff (e:59ff)
 	db "CHIEF@"
 	db "SCIENTIST@"
 	db "GIOVANNI@"
-	db "ROCKET@"
+	db "ROCKET GRUNT@"
 	db "COOLTRAINER@"
 	db "COOLTRAINER@"
 	db "BRUNO@"
