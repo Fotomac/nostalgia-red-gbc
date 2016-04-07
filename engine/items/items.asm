@@ -70,7 +70,7 @@ ItemUsePtrTable: ; d5e1 (3:55e1)
 	dw ItemUseMedicine   ; FULL_HEAL
 	dw ItemUseMedicine   ; REVIVE
 	dw ItemUseMedicine   ; MAX_REVIVE
-	dw ItemUseGuardSpec  ; GUARD_SPEC
+	dw ItemUseGuardSpec  ; GUARD_SPEC_
 	dw ItemUseSuperRepel ; SUPER_REPL
 	dw ItemUseMaxRepel   ; MAX_REPEL
 	dw ItemUseDireHit    ; DIRE_HIT
@@ -78,7 +78,7 @@ ItemUsePtrTable: ; d5e1 (3:55e1)
 	dw ItemUseMedicine   ; FRESH_WATER
 	dw ItemUseMedicine   ; SODA_POP
 	dw ItemUseMedicine   ; LEMONADE
-	dw UnusableItem      ; S_S_TICKET
+	dw UnusableItem      ; S_S__TICKET
 	dw UnusableItem      ; GOLD_TEETH
 	dw ItemUseXStat      ; X_ATTACK
 	dw ItemUseXStat      ; X_DEFEND
@@ -90,7 +90,7 @@ ItemUsePtrTable: ; d5e1 (3:55e1)
 	dw UnusableItem      ; SILPH_SCOPE
 	dw ItemUsePokeflute  ; POKE_FLUTE
 	dw UnusableItem      ; LIFT_KEY
-	dw UnusableItem      ; EXP_ALL
+	dw UnusableItem      ; EXP__ALL
 	dw ItemUseOldRod     ; OLD_ROD
 	dw ItemUseGoodRod    ; GOOD_ROD
 	dw ItemUseSuperRod   ; SUPER_ROD
@@ -1054,7 +1054,7 @@ ItemUseMedicine: ; dabb (3:5abb)
 	ld [hFlags_0xFFF6],a
 	ld a,$02
 	ld [wHPBarType],a
-	predef UpdateHPBar_Hook ; animate HP bar decrease of pokemon that used Softboiled
+	predef UpdateHPBar2 ; animate HP bar decrease of pokemon that used Softboiled
 	ld a,[hFlags_0xFFF6]
 	res 0,a
 	ld [hFlags_0xFFF6],a
@@ -1204,7 +1204,7 @@ ItemUseMedicine: ; dabb (3:5abb)
 	ld [hFlags_0xFFF6],a
 	ld a,$02
 	ld [wHPBarType],a
-	predef UpdateHPBar_Hook ; animate the HP bar lengthening
+	predef UpdateHPBar2 ; animate the HP bar lengthening
 	ld a,[hFlags_0xFFF6]
 	res 0,a
 	ld [hFlags_0xFFF6],a
@@ -1879,7 +1879,7 @@ ItemUseOldRod: ; e24c (3:624c)
 	jr nc, .RandomLoop
 ; Determine if we need to load normal or sea route data
 	push af
-	ld a,[W_CURMAP]
+	ld a,[wCurMap]
 	ld hl,OldRodMons2 ; Sea Routes
 	cp ROUTE_19
 	jr z,.done
