@@ -17,7 +17,6 @@ db SCRATCH
 db LEER
 db LOW_KICK
 db KARATE_CHOP
-ENDC
 db 0 ; growth rate
 ; learnset
 	tmlearn 1,5,6,8
