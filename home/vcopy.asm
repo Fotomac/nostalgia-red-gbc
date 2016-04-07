@@ -101,7 +101,7 @@ _GbcPrepareVBlank:
 	pop af
 	reti
 
-SECTION "JpPoint", ROM0[$1dde]
+SECTION "JpPoint", ROM0
 
 JpPoint:
 	jp _RefreshWindowInitial	; HAX
