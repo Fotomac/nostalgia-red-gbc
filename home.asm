@@ -323,16 +323,6 @@ LoadMonData:: ; 1372 (0:1372)
 	jpab LoadMonData_
 
 
-OverwritewMoves:: ; 137a (0:137a)
-; Write c to [wMoves + b]. Unused.
-	ld hl, wMoves
-	ld e, b
-	ld d, 0
-	add hl, de
-	ld a, c
-	ld [hl], a
-	ret
-
 LoadFlippedFrontSpriteByMonIndex:: ; 1384 (0:1384)
 	ld a, 1
 	ld [wSpriteFlipped], a
@@ -608,15 +598,6 @@ PrintLevelCommon:: ; 1523 (0:1523)
 	ld de,wd11e
 	ld b,LEFT_ALIGN | 1 ; 1 byte
 	jp PrintNumber
-
-GetwMoves:: ; 152e (0:152e)
-; Unused. Returns the move at index a from wMoves in a
-	ld hl,wMoves
-	ld c,a
-	ld b,0
-	add hl,bc
-	ld a,[hl]
-	ret
 
 ; copies the base stat data of a pokemon to wMonHeader
 ; INPUT:
@@ -4838,6 +4819,18 @@ DelayFrameHook:
 	pop de
 	pop bc
 	ret
+
+SetCustomName:
+; INPUTS: hl = pointer to name
+; OUTPUTS: trainer name stored in wCurTrainerName, hl points to byte immediately after name
+	ld de, wCurTrainerName
+.loop
+	ld a, [hli]
+	ld [de],a
+	inc de
+	cp "@"
+	ret z
+	jr .loop
 
 IsTrainerSpecial::
 	ld hl, SpecialTrainerIDs
